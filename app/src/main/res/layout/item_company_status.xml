@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:id="@+id/rlItemCompanyStatus"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/rbItemCS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:checked="false"
+            android:layout_centerVertical="true" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvItemCSTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/company_status_private_ltd"
+            style="@style/defaultTextStyle"
+            android:textColor="@color/black"
+            android:layout_centerVertical="true"
+
+            android:layout_toEndOf="@+id/rbItemCS"
+
+            />
+
+    </RelativeLayout>
+</layout>

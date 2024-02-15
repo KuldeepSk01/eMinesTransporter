@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llcDOngoinhBtn">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivTruckDO"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:src="@drawable/truck_img"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvOngoingTuckDateDo"
+                style="@style/defaultTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:fontFamily="@font/inter_bold"
+                android:text="@string/sun_feb_19_04_14_pm"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/ivTruckDO"
+                app:layout_constraintTop_toTopOf="@+id/ivTruckDO" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTruckDOngoingStatus"
+                style="@style/TextStyle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:text="@string/open"
+                android:textColor="@color/seller_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ivTruckDO" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/llcTuckNOItemDC"
+                app:layout_constraintStart_toEndOf="@+id/ivTruckDO"
+                app:layout_constraintTop_toBottomOf="@+id/tvOngoingTuckDateDo">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvEnterTruckNumberText"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:text="@string/truck_no"
+                    android:textColor="@color/blue_color_2"
+                    app:layout_constraintStart_toEndOf="@+id/cvProfileOnGoingImg"
+                    app:layout_constraintTop_toTopOf="@+id/cvProfileOnGoingImg" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvEnterTruckNumber"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:text="@string/up16cm1912"
+                    android:textColor="@color/default_text_color"
+                    app:layout_constraintStart_toEndOf="@+id/cvProfileOnGoingImg"
+                    app:layout_constraintTop_toTopOf="@+id/cvProfileOnGoingImg" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <View
+                android:id="@+id/vTrackStatusStart"
+                android:elevation="@dimen/_5sdp"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:background="@drawable/ic_present_count_drawable"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@+id/llcTuckNOItemDC"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTruckLocationStartDC"
+                style="@style/defaultTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:text="@string/sector_18_noida"
+                android:textColor="@color/default_text_color"
+                android:fontFamily="@font/inter_bold"
+                app:layout_constraintStart_toEndOf="@+id/vTrackStatusStart"
+                app:layout_constraintTop_toTopOf="@+id/vTrackStatusStart" />
+
+            <View
+                android:id="@+id/vTrackStatus1Vertical"
+                android:layout_width="@dimen/_1sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:background="@drawable/vertical_line"
+                app:layout_constraintStart_toStartOf="@+id/vTrackStatusStart"
+                app:layout_constraintEnd_toEndOf="@+id/vTrackStatusStart"
+                app:layout_constraintTop_toBottomOf="@+id/vTrackStatusStart"/>
+
+            <View
+                android:id="@+id/viewTrackStatusEnd"
+                android:elevation="@dimen/_5sdp"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:background="@drawable/ic_absent_count_drawable"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/_15sdp"
+                app:layout_constraintTop_toBottomOf="@+id/vTrackStatus1Vertical"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTruckLocationEndDC"
+                style="@style/defaultTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:text="@string/sector_18_noida"
+                android:textColor="@color/default_text_color"
+                android:fontFamily="@font/inter_bold"
+                app:layout_constraintStart_toEndOf="@+id/viewTrackStatusEnd"
+                app:layout_constraintTop_toTopOf="@+id/viewTrackStatusEnd" />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/llcTotalKmItemDC"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="@+id/viewTrackStatusEnd"
+                app:layout_constraintTop_toBottomOf="@+id/viewTrackStatusEnd">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTotalKmTextItemDC"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total_km"
+                    android:textColor="@color/blue_color_2"
+                    app:layout_constraintStart_toEndOf="@+id/cvProfileOnGoingImg"
+                    app:layout_constraintTop_toTopOf="@+id/cvProfileOnGoingImg" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTotalKmItemDC"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:text="@string/_3200"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toEndOf="@+id/cvProfileOnGoingImg"
+                    app:layout_constraintTop_toTopOf="@+id/cvProfileOnGoingImg" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/llcPointEarnItemDC"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:layout_constraintEnd_toStartOf="@+id/cvProfileItemDC"
+                app:layout_constraintStart_toEndOf="@+id/llcTotalKmItemDC"
+                app:layout_constraintTop_toBottomOf="@+id/viewTrackStatusEnd">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPointEarnTextItemDC"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/point_earned"
+                    android:textColor="@color/blue_color_2"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    app:layout_constraintStart_toEndOf="@+id/cvProfileOnGoingImg"
+                    app:layout_constraintTop_toTopOf="@+id/cvProfileOnGoingImg" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPointEarnItemDC"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:text="@string/_3200"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toEndOf="@+id/cvProfileOnGoingImg"
+                    app:layout_constraintTop_toTopOf="@+id/cvProfileOnGoingImg" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/llcIncidentItemDC"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="@+id/viewTrackStatusEnd"
+                app:layout_constraintTop_toBottomOf="@+id/llcTotalKmItemDC">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvIncidentTextItemDC"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/incident"
+                    android:textColor="@color/blue_color_2"
+                    app:layout_constraintStart_toEndOf="@+id/cvProfileOnGoingImg"
+                    app:layout_constraintTop_toTopOf="@+id/cvProfileOnGoingImg" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvIncidentItemDC"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:text="@string/no_incident_reported"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toEndOf="@+id/cvProfileOnGoingImg"
+                    app:layout_constraintTop_toTopOf="@+id/cvProfileOnGoingImg" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvProfileItemDC"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:padding="@dimen/_5sdp"
+                app:cardCornerRadius="@dimen/_50sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vTrackStatusStart"
+
+                >
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivProfileItemDC"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/verify_img" />
+            </androidx.cardview.widget.CardView>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</layout>

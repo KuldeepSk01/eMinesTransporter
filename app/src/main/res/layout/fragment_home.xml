@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="mViewModel"
+            type="com.emines_transportation.screen.dashboard.home.HomeViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nSVLogin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fillViewport="true"
+        android:scrollIndicators="none"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".screen.dashboard.home.HomeFragment">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clProfileHome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_toolbar_bg_1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <!-- <androidx.appcompat.widget.LinearLayoutCompat
+                         android:id="@+id/llcLocationHome"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginStart="@dimen/_15sdp"
+                         android:layout_marginTop="@dimen/_15sdp"
+                         android:orientation="vertical"
+                         app:layout_constraintEnd_toEndOf="parent"
+                         app:layout_constraintStart_toStartOf="parent"
+                         app:layout_constraintTop_toTopOf="parent"
+
+                         >
+
+
+                         <androidx.appcompat.widget.AppCompatTextView
+                             android:id="@+id/currentAddressHome"
+                             style="@style/defaultTextStyle"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:drawableStart="@drawable/ic_map_pin"
+                             android:drawablePadding="@dimen/_5sdp"
+                             android:text="@string/sector_18_noida"
+                             android:textColor="@color/white"
+                             android:textSize="@dimen/_8ssp" />
+
+                     </androidx.appcompat.widget.LinearLayoutCompat>
+ -->
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvProfileHomeImg"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:padding="@dimen/_5sdp"
+                        app:cardCornerRadius="@dimen/_50sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+
+                        >
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivProfileHomeImg"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/verify_img" />
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvProfileHomeUserName"
+                        style="@style/TextStyle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:fontFamily="@font/inter_regular"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cvProfileHomeImg" />
+
+                  <!--  <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvProfileHomeUserAddress"
+                        style="@style/TextStyle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="@string/eco_green_pvt_ltd"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvProfileHomeUserName" />
+-->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvProfileHomeCompanyName"
+                        style="@style/TextStyle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:fontFamily="@font/inter_regular"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvProfileHomeUserName" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <GridLayout
+                    android:id="@+id/gridlayout1Home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:columnCount="2"
+                    android:rowCount="3"
+                    app:layout_constraintTop_toBottomOf="@+id/clProfileHome">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llcHomePickup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_row="0"
+                        android:layout_column="0"
+                        android:layout_columnWeight="1"
+                        android:background="@drawable/seller_outline_drawable"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvBuyerBtn"
+                            style="@style/Home2BuyerBtnStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_30sdp"
+                            android:text="@string/total_pickup" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvPickUpCount"
+                            style="@style/TextStyle2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:fontFamily="@font/inter_regular"
+                            android:gravity="center"
+                            />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llcHomeInProcess"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_row="0"
+                        android:layout_column="1"
+                        android:layout_columnWeight="1"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:background="@drawable/seller_outline_drawable"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvSellerBtn"
+                            style="@style/Home2BuyerBtnStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_30sdp"
+                            android:text="@string/total_in_process" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvInProcessCount"
+                            style="@style/TextStyle2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:fontFamily="@font/inter_regular"
+                            android:gravity="center"
+                            />
+
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llcHomeDelivered"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_row="1"
+                        android:layout_column="0"
+                        android:layout_columnWeight="1"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/seller_outline_drawable"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvDeliveredOrderBtn"
+                            style="@style/Home2BuyerBtnStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_30sdp"
+                            android:text="@string/total_delivered" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvDeliveredOrderCount"
+                            style="@style/TextStyle2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:fontFamily="@font/inter_regular"
+                            android:gravity="center"
+                            />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_row="1"
+                        android:layout_column="1"
+                        android:layout_columnWeight="1"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/seller_outline_drawable"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvCompletePickupBtn"
+                            style="@style/Home2BuyerBtnStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_30sdp"
+                            android:text="@string/my_company" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvCompanyNameHome"
+                            style="@style/TextStyle2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:fontFamily="@font/inter_regular"
+                            android:gravity="center"
+                            />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                </GridLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivHome"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_200sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    app:layout_constraintTop_toBottomOf="@+id/gridlayout1Home"
+
+                    />
+
+
+                <!--
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rvInfo2ProfileHome"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:layout_marginTop="@dimen/_15sdp"
+                                    android:layout_marginEnd="@dimen/_5sdp"
+                                    app:layout_constraintTop_toBottomOf="@+id/ivHome" />-->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

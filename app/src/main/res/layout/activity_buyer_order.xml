@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nSVTest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollIndicators="none"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".screen.dashboard.pickup.buyerBuyerOrders.BuyerBuyerOrderActivity">
+
+
+            <RelativeLayout
+                android:id="@+id/rlToolBarBuyerOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <include
+                    android:id="@+id/toolBarBuyerOrder"
+                    layout="@layout/layout_custom_toolbar" />
+            </RelativeLayout>
+
+           <!-- <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBuyerName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rlToolBarBuyerOrder"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:text="Kuldeep Corporate pvt ldt."
+                android:layout_height="wrap_content"/>-->
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout2BuyerOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabTextAppearance="@style/tabTextStyle"
+                app:tabSelectedTextColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/rlToolBarBuyerOrder">
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/buying_request_text" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_10ssp"
+                    android:text="@string/purchase_order" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_10ssp"
+                    android:text="@string/delivered" />
+            </com.google.android.material.tabs.TabLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBuyerOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:clipToPadding="true"
+                tools:itemCount="2"
+                android:paddingBottom="@dimen/_50sdp"
+                app:layout_constraintTop_toBottomOf="@+id/tabLayout2BuyerOrder"
+                tools:listitem="@layout/item_order_layout" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+    
+</layout>

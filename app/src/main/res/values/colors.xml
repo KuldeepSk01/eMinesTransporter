@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="status_bar_color_1">#4E89AE</color>
+    <color name="status_bar_color_2">#004E89AE</color>
+    <color name="status_bar_color">#654E89AE</color>
+    <color name="blue_color_1">#9DD3FF</color>
+    <color name="blue_color_2">#2196F3</color>
+    <color name="sos_color_1">#FCA083</color>
+    <color name="sos_color_2">#FF5374</color>
+
+    <color name="call_color_1">#FBB3C1</color>
+    <color name="call_color_2">#587CF4</color>
+    <color name="buyer_color">#4E89AE</color>
+    <color name="seller_color">#ED6663</color>
+    <color name="delivery_color">#FFA372</color>
+    <color name="delivery_pickup_color">#71CEDB</color>
+    <color name="delivery_schedule_color">#CC8DE2</color>
+    <color name="primary_color">#1673AE</color>
+    <color name="light_primary_color">#4D4E89AE</color>
+    <color name="default_text_color">#858585</color>
+    <color name="hint_text_color">#B7B8B8</color>
+    <color name="box_color_1">#E6ECFF</color>
+    <color name="box_color_2">#EDEDED</color>
+
+    <color name="order_confirm_color">#6165D7</color>
+    <color name="order_pending_color">#2196F3</color>
+    <color name="order_picked_color">#FFC444</color>
+    <color name="order_complete_color">#00A15E</color>
+    <color name="order_accepted_color">#06653D</color>
+    <color name="order_cancel_color">#D71919</color>
+    <color name="red_alert_color">#E95935</color>
+
+</resources>

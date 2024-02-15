@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:id="@+id/scrollViewHom2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollIndicators="none"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/_50sdp"
+                tools:context=".screen.home2.post.PostActivity">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clPost"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_200sdp"
+                    android:background="@drawable/ic_toolbar_bg_1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvProfilePostImg"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginTop="@dimen/_30sdp"
+                        android:padding="@dimen/_5sdp"
+                        app:cardCornerRadius="@dimen/_50sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+
+                        >
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivProfileHomeImg"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/verify_img" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPostProfileName"
+                        style="@style/TextStyle2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="@string/gajendra"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="@+id/cvProfilePostImg"
+                        app:layout_constraintStart_toEndOf="@+id/cvProfilePostImg"
+                        app:layout_constraintTop_toTopOf="@+id/cvProfilePostImg" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        app:cardCornerRadius="@dimen/_5sdp"
+                        app:layout_constraintStart_toStartOf="@+id/tvPostProfileName"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPostProfileName">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_black_down_arrow"
+                            android:drawablePadding="@dimen/_10sdp"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:paddingTop="@dimen/_5sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_5sdp"
+                            android:text="@string/category" />
+
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvPostLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_300sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_minus60sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clPost">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etPost"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:gravity="top"
+                            android:hint="@string/what_s_on_your_mind"
+                            android:padding="@dimen/_10sdp" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+<!--
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llcPostBtns"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cvPostLayout">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAddImgBtn"
+                        style="@style/defaultBtnStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/default_btn_drawable3"
+                        android:drawableStart="@drawable/ic_camera"
+                        android:gravity="center"
+                        android:text="@string/add_image" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvHalfDayBtnAL"
+                        style="@style/defaultBtnStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/default_btn_drawable3"
+                        android:drawableStart="@drawable/ic_video"
+                        android:gravity="center"
+                        android:text="@string/add_video" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+-->
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvSendPostBtn"
+                    style="@style/Home2BuyerBtnStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_100sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/seller_btn_drawable"
+                    android:gravity="center"
+                    android:text="@string/post"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cvPostLayout" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+</layout>

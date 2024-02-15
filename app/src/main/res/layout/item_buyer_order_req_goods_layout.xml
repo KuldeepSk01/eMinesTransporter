@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_5sdp"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvGoodsItemName"
+            style="@style/defaultTextStyle"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/air_conditioner_text"/>
+
+<!--        <androidx.appcompat.widget.AppCompatTextView-->
+<!--            android:id="@+id/tvGoodsItemTermCode"-->
+<!--            style="@style/defaultTextStyle"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/_10sdp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="AC1037B"/>-->
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvGoodsItemPurchaseQuantity"
+            style="@style/defaultTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:text="50"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvGoodsItemUnitOfQuantity"
+            style="@style/defaultTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:text="MT"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvGoodsItemRatePerKg"
+            style="@style/defaultTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:text="50"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvGoodsItemTotalAmount"
+            style="@style/defaultTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:text="10000"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvGoodsItemGst"
+            style="@style/defaultTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:text="10%"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvGoodsItemTotalAmountWithGST"
+            style="@style/defaultTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:text="11000"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</RelativeLayout>
+
+</layout>

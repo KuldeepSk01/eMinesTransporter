@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+<variable
+    name="otpViewModel"
+    type="com.emines_transportation.screen.otpverification.OTPVerifyViewModel" />
+    </data>
+
+    <ScrollView
+        android:id="@+id/nSVOTP"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollIndicators="none"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                tools:context=".screen.verification.OTPVerificationActivity">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clHeaderOtpVerify"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <View
+                        android:id="@+id/viewAttendance"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_80sdp"
+                        android:background="@drawable/ic_toolbar_bg_1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                   <!-- <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_minus20sdp"
+                        android:src="@drawable/ic_toolbar_bg_2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />-->
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivBackBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:padding="@dimen/_10sdp"
+                        android:src="@drawable/ic_back_white_arrow"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCreateAccount"
+                        style="@style/TextStyle4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_regular"
+                        android:text="@string/otp_verification_text"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="@+id/ivBackBtn"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/ivBackBtn" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/clHeaderOtpVerify">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvVerificationTXT"
+                        style="@style/TextStyle2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/inter_bold"
+                        android:text="@string/enter_otp_text"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_20sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvOtpNoText"
+                        style="@style/defaultTextStyle"
+                        android:textColor="@color/primary_color"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_60sdp"
+                        android:text="@string/your_otp_is"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvVerificationTXT" />
+
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/pinViewLLC"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_50sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvOtpNoText">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etOne"
+                            style="@style/otpETStyle"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_50sdp"
+                            android:layout_weight="1"
+                            android:focusable="true"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:maxLength="1" />
+
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etTwo"
+                            style="@style/otpETStyle"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_50sdp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_weight="1"
+                            android:focusable="true"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:maxLength="1" />
+
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etThree"
+                            style="@style/otpETStyle"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_50sdp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_weight="1"
+                            android:focusable="true"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:maxLength="1" />
+
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/etFour"
+                            style="@style/otpETStyle"
+                            android:layout_width="@dimen/_40sdp"
+                            android:layout_height="@dimen/_50sdp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_weight="1"
+                            android:focusable="true"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:maxLength="1" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvVerifyOTPBtn"
+                        style="@style/defaultBtnStyle"
+                        android:layout_marginTop="@dimen/_50sdp"
+                        android:text="@string/verify_text"
+                        android:layout_width="match_parent"
+                        android:textColor="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/pinViewLLC" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llAlreadyHave"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:gravity="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvVerifyOTPBtn">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvResendOtpBtn"
+                            style="@style/TextStyle1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:fontFamily="@font/inter_bold"
+                            android:text="@string/resend_otp_text"
+                            android:textColor="@color/black"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvOTPTime"
+                            style="@style/TextStyle1"
+                            android:textColor="@color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:fontFamily="@font/inter_bold"
+                            android:text="@string/_00_58sec"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+</layout>

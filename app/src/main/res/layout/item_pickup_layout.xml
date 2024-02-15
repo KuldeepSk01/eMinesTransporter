@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvItemPickupBReq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_5sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:padding="@dimen/_10sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvItemPickupBReqIdText"
+                style="@style/defaultTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/order_id_text"
+                android:textColor="@color/primary_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvItemPickupId"
+                style="@style/defaultTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/s2222od"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/tvItemPickupBReqIdText"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvItemPickupAssignedDate"
+                style="@style/defaultTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="@color/black"
+                android:text="@string/assigned_date"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvItemPickupBReqIdText" />
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvItemPoNo"
+                style="@style/defaultTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/default_btn_drawable"
+                android:textColor="@color/white"
+                android:padding="@dimen/_5sdp"
+
+                android:fontFamily="@font/inter_medium"
+                android:text="PO No: xyz|11|PQ12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <!--   <androidx.appcompat.widget.AppCompatTextView
+                   android:id="@+id/tvItemPickupBReqStatus"
+                   style="@style/defaultTextStyle"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_marginEnd="@dimen/_10sdp"
+                   android:fontFamily="@font/inter_medium"
+                   android:text="@string/purchase_text"
+                   android:textColor="@color/primary_color"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintHorizontal_bias="1"
+                   app:layout_constraintStart_toEndOf="@+id/tvEstPriceItemPickupBReq"
+                   app:layout_constraintTop_toTopOf="parent" />-->
+
+            <View
+                android:id="@+id/vLineItemAddress"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/box_color_2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvItemPoNo" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivItemAddressPickupImg"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/verify_img"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/vLineItemAddress" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llcItemPickupAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/ivItemAddressPickupImg"
+                app:layout_constraintTop_toTopOf="@+id/ivItemAddressPickupImg">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/pickup_address"
+                    android:textColor="@color/primary_color" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPickupAddress"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_60sdp"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/galaxy_blue_sapphire_sector_4_text"
+                    android:textColor="@color/black" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llcItemPickupBReq1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/ivItemAddressPickupImg"
+                app:layout_constraintTop_toBottomOf="@+id/llcItemPickupAddress">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/total_category"
+                    android:textColor="@color/primary_color" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTotalCategoryPickup"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_60sdp"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/_03"
+                    android:textColor="@color/black" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llcItemPickupBReq2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/ivItemAddressPickupImg"
+                app:layout_constraintTop_toBottomOf="@+id/llcItemPickupBReq1">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/total_quantity"
+                    android:textColor="@color/primary_color" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvTotalWeightPickup"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_50sdp"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/_100_mt_text"
+                    android:textColor="@color/black" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!--
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/llcItemPickupBReq3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toEndOf="@+id/ivItemAddressPickupImg"
+                            app:layout_constraintTop_toBottomOf="@+id/llcItemPickupBReq2">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/defaultTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="Total Amount"
+                                android:textColor="@color/primary_color" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvRateItemPickupBReq"
+                                style="@style/defaultTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginEnd="@dimen/_50sdp"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="10000 (incl.GST)"
+                                android:textColor="@color/black" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+            -->
+
+            <!--
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/llcItemPickupBReq4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0"
+                            app:layout_constraintStart_toEndOf="@+id/ivItemAddressPickupImg"
+                            app:layout_constraintTop_toBottomOf="@+id/llcItemPickupBReq3">
+            
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/defaultTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="PO No :"
+                                android:textColor="@color/primary_color" />
+            
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvEstPriceItemPickupBReq"
+                                style="@style/defaultTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginEnd="@dimen/_50sdp"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="PO|xyz|PQR|1"
+                                android:textColor="@color/black" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+            -->
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llcItemPickupBReq5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/ivItemAddressPickupImg"
+                app:layout_constraintTop_toBottomOf="@+id/llcItemPickupBReq2">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvEstDate"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/est_delivery_date"
+                    android:textColor="@color/primary_color" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvItemPickupDate"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_50sdp"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="24 jan 2014"
+                    android:textColor="@color/black" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llcItemPickupBReq6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/ivItemAddressPickupImg"
+                app:layout_constraintTop_toBottomOf="@+id/llcItemPickupBReq5">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/drop_location"
+                    android:textColor="@color/primary_color" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvPODropAddressItemPickupBReq"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_50sdp"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/noida_sector_12_text"
+                    android:textColor="@color/black" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llcItemPickupBReq7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/ivItemAddressPickupImg"
+                app:layout_constraintTop_toBottomOf="@+id/llcItemPickupBReq6">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="@string/status"
+                    android:textColor="@color/primary_color" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvOrderStatus"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_50sdp"
+                    android:fontFamily="@font/inter_medium"
+                    android:textColor="@color/black" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_10sdp"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:padding="@dimen/_10sdp"
+            android:layout_height="match_parent">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitleHomeSlider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/present"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/TextStyle2"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvSubTitleHomeSlider"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:text="@string/sector_18_noida_8367897892"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ivSliderImg"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitleHomeSlider"
+                style="@style/defaultTextStyle"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDateHomeSlider"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:text="@string/_06_apr_2023_10_40_am_text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ivSliderImg"
+                app:layout_constraintTop_toBottomOf="@+id/tvSubTitleHomeSlider"
+                style="@style/defaultTextStyle"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivSliderImg"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvTitleHomeSlider"
+                app:layout_constraintBottom_toBottomOf="@+id/tvSubTitleHomeSlider"
+                android:src="@drawable/slider_img"
+                android:scaleType="centerCrop"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</layout>

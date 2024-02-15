@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+  <!--  <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />-->
+ <!--   <uses-feature
+        android:name="android.hardware.camera.any"
+        android:required="true" />-->
+
+    <!-- <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />-->
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+    <application
+        android:name=".application.EminesTransportationApplication"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Base.Theme.EMinesEmployee"
+        tools:targetApi="31">
+        <activity
+            android:name=".screen.dashboard.inprocess.detail.InProcessDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".screen.dashboard.pickup.detail.PickUpDetailActivity"
+            android:exported="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider> <!-- for view buyer info open -->
+
+
+        <activity
+            android:name=".screen.dashboard.delivered.detail.DeliveredDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <!--   <meta-data
+               android:name="com.google.android.geo.API_KEY"
+               android:value="@string/google_map_api_key" />
+   -->
+        <activity
+            android:name=".screen.map.MapActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".screen.home2.duty.DutyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.home2.post.PostActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <!--  <activity
+              android:name=".screen.dashboard.home.attendance.AttendanceSelectDateActivity"
+              android:exported="false"
+              android:screenOrientation="portrait" />-->
+        <activity
+            android:name=".screen.home2.Home2Activity"
+            android:exported="false"
+            android:screenOrientation="portrait" /> <!-- buyers activity -->
+
+
+        <!-- activities for profile fragment -->
+        <activity
+            android:name=".screen.dashboard.profile.profile.ProfileInfoActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+     <!--   <activity
+            android:name=".screen.dashboard.profile.address.ProfileAddressActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.dashboard.profile.address.ProfileAddressListActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.dashboard.profile.kyc.ProfileKYCActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.dashboard.profile.bank.ProfileAccountActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" /> &lt;!&ndash; activities for pickup fragment &ndash;&gt;
+
+-->
+        <activity
+            android:name=".screen.login.LoginActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.otpverification.OTPVerificationActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.splash.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".screen.onboarding.OnBoardingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".screen.dashboard.MainActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" /> <!-- For Buyers open -->
+
+    </application>
+
+</manifest>

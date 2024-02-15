@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/mtMI"
+        android:title="@string/mt" />
+    <item
+        android:id="@+id/kgMI"
+        android:title="@string/kg" />
+
+</menu>

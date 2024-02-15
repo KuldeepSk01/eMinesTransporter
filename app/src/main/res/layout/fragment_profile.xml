@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:id="@+id/nSVTest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollIndicators="none"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".screen.dashboard.profile.ProfileFragment">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clHeaderProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_100sdp"
+                    android:background="@drawable/ic_toolbar_bg_1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvProfileImg"
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="@dimen/_70sdp"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        app:cardCornerRadius="@dimen/_50sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivProfileImg"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/verify_img" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/cvProfileImg"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toEndOf="@+id/cvProfileImg"
+                        app:layout_constraintTop_toTopOf="@+id/cvProfileImg"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvProfileName"
+                            style="@style/TextStyle1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_bold"
+                            android:text="@string/gajendra_singh" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvProfileMobile"
+                            style="@style/defaultTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvProfileName"
+                            android:text="@string/_8837635262"
+                            android:textColor="@color/white" />
+
+                      <!--  <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvProfileEmail"
+                            style="@style/defaultTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvProfileMobile"
+                            android:text="@string/gajendra_connect_gmail_com_text"
+                            android:textColor="@color/white" />
+-->
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivEditProfileBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:padding="@dimen/_10sdp"
+                        android:src="@drawable/ic_edit"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/cvProfileImg" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clHeaderProfile">
+
+                  <!--  <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvProfile"
+                        style="@style/profileTextViewStyle"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/profile"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+-->
+          <!--          <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAddressProfile"
+                        style="@style/profileTextViewStyle"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/address"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvProfile" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvKYCProfile"
+                        style="@style/profileTextViewStyle"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/kyc"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvAddressProfile" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvBankDetailProfile"
+                        style="@style/profileTextViewStyle"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/bank_detail_text"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvKYCProfile" />
+-->
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvProfile"
+                        style="@style/profileTextViewStyle"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/profile"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvSupportProfile"
+                        style="@style/profileTextViewStyle"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/support"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvProfile"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvLogoutProfile"
+                        style="@style/profileTextViewStyle"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="@string/log_out"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_marginBottom="@dimen/_100sdp"
+                        app:layout_constraintTop_toBottomOf="@+id/tvLogoutProfile" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+</layout>

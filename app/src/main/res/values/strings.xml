@@ -1,0 +1,500 @@
+<resources>
+    <string name="app_name">EMines Transporter</string>
+    <string name="google_map_api_key">AIzaSyDdjn78Q56nymORUkHZvTxNfm7czVEroXY</string>
+
+
+    <string name="e_mines">Transporter</string>
+    <string name="version1_0">Version</string>
+    <string name="skip_text">Skip</string>
+    <string name="loading_sub_title_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</string>
+    <string name="loading_title_one">Manage pickup and delivery</string>
+    <string name="loading_title_two">Upload and manage Weight Receipts / eWay bills</string>
+    <string name="loading_title_three"><![CDATA[Manage Delivery and GRN]]></string>
+
+
+    <string name="you_have_logged_in_successfully_text">You have logged in \nsuccessfully</string>
+    <string name="since_the_beginning_of_the_internet_millions_and_millions_and_millions_of_bhave_died_text">"\nSince the beginning of the internet, millions and millions and millions of bhave died "</string>
+    <string name="continue_text">Continue</string>
+
+
+    <string name="create_account_text">Create Account</string>
+    <string name="phone_number_text">Phone Number</string>
+    <string name="enter_your_phone_number_text">Enter your phone number</string>
+    <string name="send_otp_text">Send OTP</string>
+    <string name="not_registered_yet_text">Not Registered yet?</string>
+    <string name="create_an_account_text">Create an Account</string>
+    <string name="name_text">Name</string>
+    <string name="enter_your_name_text">Enter your name</string>
+    <string name="already_have_an_account_text">Already have an account?</string>
+    <string name="otp_verification_text">OTP Verification</string>
+    <string name="enter_otp_text">Enter OTP</string>
+    <string name="your_otp_is">Your OTP is </string>
+    <string name="sign_up_text">Sign Up</string>
+    <string name="resend_otp_text">Resend OTP</string>
+    <string name="_00_58sec">00:30Sec</string>
+    <string name="verify_text">Verify</string>
+    <string name="title_text">Title</string>
+    <string name="gajendra_singh_agm_noida">Gajendra Singh \n AGM Noida</string>
+    <string name="confirm">Confirm</string>
+    <string name="not_me">Not Me</string>
+    <string name="verifyme2_location_text"><![CDATA[Location, Date & Time will be Collected If no action taken, you will be marked Absent.]]></string>
+    <string name="button1">Button1</string>
+    <string name="button2">Button2</string>
+    <string name="apply_leave">Apply Leave</string>
+    <string name="types_of_leave">Types of leave</string>
+    <string name="full_day">Full Day</string>
+    <string name="multi_day">Multi Day</string>
+    <string name="half_day">Half Day</string>
+    <string name="home">Home</string>
+    <string name="pick_up">Pick Up</string>
+    <string name="delivered">Delivered</string>
+    <string name="profile">Profile</string>
+    <string name="client">Client</string>
+    <string name="login">Login</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="gajendra_singh">Gajendra Singh</string>
+    <string name="agm_noida">AGM Noida</string>
+    <string name="online">Online</string>
+    <string name="my_attendance">My Attendance</string>
+    <string name="add_buyer">Add Buyer</string>
+    <string name="track_your_orders_anytime">Track your orders anytime</string>
+    <string name="add_seller">Add Seller</string>
+    <string name="create_order">Create Order</string>
+    <string name="get_a_price_for_your_order">Get a price for your order</string>
+    <string name="create_pick_up">Create Pick Up</string>
+    <string name="my_order">My Order</string>
+    <string name="my_pick_up">My Pick Up</string>
+    <string name="explore_info">Explore info</string>
+    <string name="make_a_new_order_anytime_anywhere"><![CDATA[Make a new order anytime & anywhere]]></string>
+    <string name="contact_person">Contact Person (Buyer)</string>
+    <string name="contact_person_common">Contact Person</string>
+    <string name="buyer_kyc">Buyer KYC</string>
+    <string name="buyer_bank_account">Buyer Account</string>
+    <string name="bank_account">Bank Account</string>
+    <string name="cancel_cap">CANCEL</string>
+    <string name="apply_cap">APPLY</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email_id">Email Id</string>
+    <string name="gajendra_connect_gmail_com_text">gajendra@webkype.com</string>
+    <string name="gajendra">Gajendra</string>
+    <string name="singh">Singh</string>
+    <string name="contact">Contact</string>
+    <string name="address">Address</string>
+    <string name="type_text">Type</string>
+    <string name="webkype_info_pvt">WebKype Info PVT.</string>
+    <string name="country_text">Country</string>
+    <string name="state_text">State</string>
+    <string name="galaxy_blue_sapphire_sector_4_text">Galaxy Blue sappire</string>
+    <string name="city_text">City</string>
+    <string name="uttar_pradesh_text">Uttar Pradesh</string>
+    <string name="area_text">Area</string>
+    <string name="attendance_text">Attendance</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="target">Target</string>
+    <string name="pickup">Pickup</string>
+    <string name="_12">12</string>
+    <string name="seller">Seller</string>
+    <string name="sellers">Sellers</string>
+    <string name="delivered_order">Delivered Order</string>
+    <string name="scheduled_pickup">Scheduled Pickup</string>
+    <string name="complete_pickup">Complete Pickup</string>
+    <string name="scheduled_order">Scheduled Order</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="about_us">About Us</string>
+    <string name="faq">FAQ</string>
+    <string name="support">Support</string>
+    <string name="contact_admin">Contact Admin</string>
+    <string name="q1_2023">Q1-2023</string>
+    <string name="_100">100%</string>
+    <string name="apr_may_jun">Apr-May-Jun</string>
+    <string name="sales_value">Sales Value</string>
+    <string name="_20_00_000_rs">20,00,000 Rs</string>
+    <string name="today">Today</string>
+    <string name="monthly">Monthly</string>
+    <string name="date_range">Date Range</string>
+    <string name="_03">03</string>
+    <string name="absent">Absent</string>
+    <string name="present">Present</string>
+    <string name="not_mark">Not Mark</string>
+    <string name="check_in">Check In:</string>
+    <string name="_10_am">10 AM</string>
+    <string name="check_out">Check Out:</string>
+    <string name="_23_march_2023">23 March 2023</string>
+    <string name="sector_18_noida">Sector 18, Noida</string>
+    <string name="april_2023">April 2023</string>
+    <string name="_12_days">12 Days</string>
+    <string name="present_coln">Present:</string>
+    <string name="absent_coln">Absent:</string>
+    <string name="leave_coln">Leave:</string>
+    <string name="pin_code">Pin Code</string>
+    <string name="category">Category</string>
+    <string name="what_s_on_your_mind">What\'s on your mind?</string>
+    <string name="add_image">Add Image</string>
+    <string name="add_video">Add Video</string>
+    <string name="post">Post</string>
+    <string name="ongoing">Ongoing</string>
+    <string name="complete">Complete</string>
+    <string name="enter_truck_no">Enter Truck No:</string>
+    <string name="up16cm1912">UP16CM1912</string>
+    <string name="truck_company">Truck Company:</string>
+    <string name="xyz_company">XYZ Company</string>
+    <string name="open">Open</string>
+    <string name="sun_feb_19_04_14_pm">Sun, Feb 19, 04:14 PM</string>
+    <string name="odunsi_junction_kiosk_lane">Odunsi Junction - Kiosk Lane</string>
+    <string name="pollution">Pollution</string>
+    <string name="permit">Permit</string>
+    <string name="rc">RC</string>
+    <string name="eway_bill">Eway Bill</string>
+    <string name="sos">SOS</string>
+    <string name="call_lawyer">Call Lawyer</string>
+    <string name="truck_info">Truck Reg No: UP16 CM 9078\nCompany: Solanki Transport Company\nSubscription expires on : 17 March 2023\nType: Overload Challan\nState / City / Pin / Road/ Landmark\nDriver : Rajesh Kumar</string>
+    <string name="truck_no">Truck NO. :</string>
+    <string name="total_km">Total Km :</string>
+    <string name="_3200">3200</string>
+    <string name="point_earned">Point Earned</string>
+    <string name="incident">Incident</string>
+    <string name="no_incident_reported">No Incident Reported</string>
+    <string name="next_cap">NEXT</string>
+    <string name="buyer_address">Buyer Address</string>
+    <string name="company">Company</string>
+    <string name="website">Website</string>
+    <string name="back_cap">BACK</string>
+    <string name="buyer_info">Buyer Info</string>
+    <string name="pan_number">PAN Number</string>
+    <string name="upload_pan">Upload PAN</string>
+    <string name="aadhaar_number">Aadhaar Number</string>
+    <string name="gst_number">GST Certificate Number</string>
+    <string name="upload_aadhar">Upload Aadhaar</string>
+    <string name="upload_gs">Upload GST Certificate</string>
+    <string name="account_name">Account Name</string>
+    <string name="account_number">Account Number</string>
+    <string name="bank_name">Bank Name</string>
+    <string name="ifsc_code">IFSC Code</string>
+    <string name="add_more_text">Add More</string>
+    <string name="_3068_woodlawn_drive_milwaukee_n414_672_5388_text">1460  Jenric Lane, Ashmor Drive Florida 414-672-5388</string>
+    <string name="edit">Edit</string>
+    <string name="kyc">KYC</string>
+    <string name="_8837635262">8837635262</string>
+
+
+    <string name="my_account_text">My Account</string>
+    <string name="business_info_text">Business Info</string>
+    <string name="kyc_text">KYC</string>
+    <string name="help_support_text">Help/Support</string>
+    <string name="orders_text">Delivered Orders</string>
+    <string name="address_text">Address</string>
+    <string name="bank_detail_text">Bank Detail</string>
+    <string name="payments_text">Payments</string>
+
+
+    <string name="confirmed_text">Confirmed</string>
+    <string name="picked_text">Picked</string>
+    <string name="pending_text">Pending</string>
+    <string name="completed_text">Completed</string>
+    <string name="buying_request_text">Buying Request</string>
+    <string name="purchase_order">Purchase Order</string>
+
+
+    <string name="placed_text">Placed</string>
+    <string name="type">Type :</string>
+    <string name="sell_corporate_ac_washing_machine_text">Sell (Corporate)AC, Washing Machine</string>
+    <string name="weight_text">Weight :</string>
+    <string name="rs_50_kg_text">Rs 50/kg</string>
+    <string name="rs_5_00_000_text">Rs 5,00,000</string>
+    <string name="rate">Rate :</string>
+    <string name="est_price_text">Est. Price :</string>
+    <string name="_06_apr_2023_10_40_am_text">06 Apr 2023</string>
+    <string name="_100_mt_text">100 MT</string>
+    <string name="order_created_on_text">Order Created on :</string>
+    <string name="order_id_text">Order ID:</string>
+    <string name="s2222od">S2222OD</string>
+    <string name="year">Year</string>
+    <string name="yearly">Yearly</string>
+    <string name="profile_info">Profile Info</string>
+    <string name="add_more">Add More</string>
+    <string name="rcr_waster_pvt_ltd_rajeev_shukla">Greenscape Eco Management...</string>
+    <string name="sector_18_noida_8367897892">08 Rajasthan,India 110072</string>
+    <!--
+    <string name="sector_18_noida_8367897892">Ghori Bachhera, Greater Noida , Gautam Buddh Nagar,201310, India Uttar Pradesh</string>
+-->
+
+    <string name="buyer">Buyer</string>
+    <string name="update">Update</string>
+    <string name="create_pickup">Create Pickup</string>
+    <string name="active">Active</string>
+    <string name="not_active">Not Active</string>
+    <string name="seller_list">In Process Orders</string>
+    <string name="buyer_list">Pickup Assigned</string>
+
+
+    <string name="noida_text">Noida</string>
+    <string name="corporate_enquiry_text">Corporate Enquiry</string>
+    <string name="choose_a_category_sell_text">Choose a category (Sell)</string>
+    <string name="corporate_enquiry_sell_text">Corporate Enquiry (Sell)</string>
+    <string name="product_type_text">Product Type</string>
+    <string name="other">Other</string>
+    <string name="electronics_text">Electronics</string>
+    <string name="total_items_text">Total Items</string>
+    <string name="_10_20_kg_text">10-20 Kg</string>
+    <string name="total_weight_text">Total Weight</string>
+    <string name="up_to_500_kg_text">Up to 500 Kg</string>
+    <string name="_500_2000_kg_text">500-2000 Kg</string>
+    <string name="_2000_5000_kg_text">2000-5000 Kg</string>
+    <string name="_5000_kg_text">+ 5000 Kg</string>
+    <string name="comments_text">Comments</string>
+    <string name="air_conditioner_text">Air Conditioner</string>
+    <string name="refrigerator_text">Refrigerator</string>
+    <string name="computers_text">Computers</string>
+    <string name="microwave_text">Microwave</string>
+    <string name="washing_machine_text">Washing Machine</string>
+    <string name="other_text">Other</string>
+    <string name="sell_your_product_at_the_best_price_anytime_text">Sell your product at the best price, anytime.</string>
+    <string name="quality_text">Quantity</string>
+    <string name="approx_weight_text">Approx. weight *</string>
+    <string name="approx_weights_text">Approx. Weight</string>
+    <string name="total_pcs_text">Total pcs</string>
+    <string name="basic_prices_at_seller_s_warehouse_without_gst_text"><![CDATA[(Basic prices at seller\'s warehouse & without GST)]]></string>
+    <string name="_52_text">52</string>
+    <string name="please_upload_some_pictures_of_your_stock_for_evaluation_purpose_only_text">Please upload some pictures of your stock for evaluation purpose only.</string>
+    <string name="upload_stock_images">Upload Stock images</string>
+    <string name="yes">Yes</string>
+    <string name="truck_size_text">Truck Size:</string>
+    <string name="no">No</string>
+    <string name="full_truck_load_40_mt_text">Full Truck load (40 MT)</string>
+    <string name="half_truck_load_22_mt_text">Half Truck load (22 MT)</string>
+    <string name="do_you_have_transport_to_deliver_to_our_warehouse_text">Do you have transport to deliver to our warehouse?</string>
+    <string name="do_you_have_weight_machine_near_by_text">Do you have weight machine near by ?</string>
+    <string name="name_of_weighing_machine_text">Name of Weighing Machine:</string>
+    <string name="rate_per_kg">Rate Per Kg</string>
+    <string name="buyer_delivery_address_text"><![CDATA[Buyer & Delivery Address]]></string>
+    <string name="television_text">Television</string>
+    <string name="select_category">Select Category</string>
+    <string name="allowed_jpg_gif_or_png_max_size_of_800k_text">Allowed JPG, GIF or PNG. Max size of 800K</string>
+    <string name="mode_detail_text">More Detail</string>
+    <string name="info">Info</string>
+    <string name="account">Account</string>
+    <string name="save">Save</string>
+    <string name="save_cap">SAVE</string>
+    <string name="location">Location :</string>
+    <string name="i_want_to_sell">I want to sell</string>
+    <string name="within_12_hours_text">Within 12 hours</string>
+    <string name="within_48_hours_text">Within 48 hours</string>
+
+
+    <string name="slots_text">Slots</string>
+    <string name="morning_text">Morning</string>
+    <string name="evening_text">Evening</string>
+    <string name="day_txet">Day</string>
+    <string name="night_text">Night</string>
+    <string name="we_can_ship_directly_to_your_warehouse_text">We Can Ship Directly To Your Warehouse.</string>
+    <string name="anytime_text">Anytime</string>
+    <string name="pick_up_date_amp_time_text"><![CDATA[Pick Up Date & time]]></string>
+
+
+    <string name="bank_transfer_text">Bank Transfer</string>
+    <string name="approved_bank_account_text">Approved Bank Account</string>
+    <string name="webkype_info_services_pvt_ltd_text">Webkype Info Services Pvt Ltd</string>
+    <string name="account_number_text">Account Number :</string>
+    <string name="branch">Branch </string>
+    <string name="ifsc">IFSC </string>
+    <string name="_30212975009_text"> 30212975009</string>
+    <string name="icic99081_text">ICIC99081</string>
+    <string name="noida_sector_12_text">Noida Sector 12</string>
+    <string name="icici_bank_text">ICICI Bank</string>
+    <string name="post_delivery_your_payment_will_be_credited_in_this_account_only_text">Post Delivery, Your Payment Will Be Credited In This Account Only.</string>
+    <string name="order_confirmation">Great, Thank you for registering on Emines seller app.We will check and approve your account shortly.</string>
+
+    <string name="seller_pickup_address_text"><![CDATA[Seller & Pickup Address]]></string>
+    <string name="ts_1014_bsi_business_park_sector_6_noida_up_201301_text">TS-1014, BSI Business Park, Sector 6, Noida Up 201301.</string>
+    <string name="genx_esolutions_llc_text">GenX eSolutions LLC</string>
+    <string name="bill_to_text">Bill to</string>
+    <string name="emines_innovation_pvt_ltd_text">Emines Innovation Pvt Ltd</string>
+    <string name="se0001_text">SE0001</string>
+    <string name="order_detail">Order Detail</string>
+    <string name="select_address">Select Address</string>
+    <string name="error_mobile_empty">Mobile number is Empty !</string>
+    <string name="error_email_empty">Email is Empty !</string>
+    <string name="error_full_name_empty">Full Name is Empty !</string>
+    <string name="error_buyer_type_empty">Please select buyer type !</string>
+
+
+    <string name="error_valid_email">Please enter valid email!</string>
+    <string name="error_mobile_length">MobileNo must be 10 digit!</string>
+    <string name="verify_success">Validation complete.</string>
+    <string name="sick">Sick Leave</string>
+    <string name="personal">Personal</string>
+    <string name="leave">Leave</string>
+    <string name="select_date">Select Date</string>
+    <string name="_2023_10_04">2023-10-04</string>
+    <string name="date">Date :</string>
+    <string name="colon_text">:</string>
+    <string name="cancel_cheque">Cancelled cheque Number</string>
+    <string name="done">Done</string>
+    <string name="something">Something</string>
+    <string name="upload_cancel_cheque">Upload Cancelled cheque</string>
+    <string name="achieved_value">Achieved Value</string>
+    <string name="target_value">Target Value</string>
+    <string name="target_detail">Target Detail</string>
+    <string name="buyer_type">Buyer Type</string>
+    <string name="seller_type">Seller Type</string>
+    <string name="full_name">Full Name</string>
+    <string name="individual">Individual</string>
+    <string name="corporate">Corporate</string>
+    <string name="office">Office</string>
+    <string name="india">India</string>
+    <string name="no_address_found">No Address Found !</string>
+    <string name="company_mobile_no">Company Mobile No</string>
+    <string name="company_name">Company Name</string>
+    <string name="company_email">Company Email</string>
+    <string name="log_out">Log out</string>
+    <string name="_9787354638">9787354638</string>
+    <string name="upload_profile_picture">Upload profile picture</string>
+    <string name="number_of_directors">Number of Directors</string>
+    <string name="number_of_employee">Number of Employee</string>
+
+    <!--company status list name open-->
+    <string name="company_status_private_ltd">Private Ltd.</string>
+    <string name="company_status_public">Public Ltd.</string>
+    <string name="company_status_firm">Firm</string>
+    <string name="company_status_partnership">Partnership</string>
+    <string name="company_status_proprietor">Proprietor</string>
+    <string name="company_status_msme">MSME</string>
+    <string name="company_status">Company Status</string>
+    <!--company status list name close-->
+
+
+    <string name="per_year_purpose_buying_from_emines">Per year / Purpose Buying From Emines</string>
+    <string name="mt">MT</string>
+    <string name="value">Value</string>
+    <string name="environment_certificate_number">Environment Certificate Number</string>
+    <string name="upload_environment_certificate">Upload Environment Certificate</string>
+    <string name="company_info">Company info</string>
+    <string name="create_request">Create Request</string>
+    <string name="description_of_goods">Good/Items</string>
+    <string name="terms_code">Terms Code</string>
+    <string name="purchase_quantity">Delivery Qty.</string>
+    <string name="unit_of_quantity">Unit</string>
+    <string name="rate_kg_incl_gst">Rate(KG)(Incl. GST)</string>
+    <string name="total_amount_incl_gst">Total Amount (Incl. GST)</string>
+    <string name="total_amount_excl_gst">Total Amount (Excl. GST)</string>
+    <string name="add">Add</string>
+    <string name="kg">Kg</string>
+    <string name="total_amount">Total Amount</string>
+    <string name="rate__">Rate_</string>
+    <string name="gst">GST %</string>
+    <string name="bank_account_seller">Bank Account (Seller)</string>
+    <string name="new_request">New Request</string>
+    <string name="approved">Approved</string>
+    <string name="cancelled">Cancelled</string>
+    <string name="po_no">PO No :</string>
+    <string name="quantity">Quantity :</string>
+    <string name="manage_buyer_order"><![CDATA[Manage Buyer & Orders]]></string>
+    <string name="in_process">In Process</string>
+    <string name="awaited">Awaited</string>
+    <string name="manage_seller_order"><![CDATA[Manage Seller & Orders]]></string>
+    <string name="buying_req">Buying Req</string>
+    <string name="po">PO</string>
+    <string name="total_order">Total Order</string>
+    <string name="indian_rupee_symbol">₹</string>
+    <string name="please_select_weight_of_category">Please select weight of Category!</string>
+    <string name="you_reached_maximum_limit_4">You reached Maximum limit 4 !</string>
+    <string name="please_select_category">Please Select category</string>
+    <string name="i_want_to_buy">I want to buy</string>
+    <string name="please_add_at_least_one_good">Please add at least one Goods!</string>
+    <string name="please_select_amount">please select Amount!</string>
+    <string name="enq_id">ENQ. ID :</string>
+    <string name="po_uploaded">PO Uploaded</string>
+    <string name="enquiry_detail">Enquiry Detail</string>
+    <string name="total_category">Total Category</string>
+    <string name="total_quantity">Total Quantity</string>
+    <string name="deliver_to">Deliver to</string>
+    <string name="pickup_address">Pickup Address</string>
+    <string name="est_delivery_date">Est. Delivery Date :</string>
+    <string name="drop_location">Drop Location</string>
+    <string name="total_in_process">Total In Process</string>
+    <string name="total_pickup">Total Pickup</string>
+    <string name="total_delivered">Total Delivered</string>
+    <string name="my_company">My Company</string>
+    <string name="_hlines">---------------------</string>
+    <string name="rejected">Rejected</string>
+    <string name="accepted">Accepted</string>
+    <string name="upload_weight_receipt">Upload Weight Receipt</string>
+    <string name="upload_eway_bill">Upload EWay Bill</string>
+    <string name="eway_bill_number">EWay Bill Number</string>
+    <string name="est_delivery_date_25jan2024">Est. Delivery Date : 25Jan2024</string>
+    <string name="pickup_date_23_jan_2024">Pickup Date : 23 Jan 2024</string>
+    <string name="new_pickup">New pickup</string>
+    <string name="picked_up">Picked Up</string>
+    <string name="status">Status :</string>
+    <string name="uploaded_ewbill">View EWBill</string>
+    <string name="reached">Reached</string>
+    <string name="upload_grn">Upload GRN</string>
+    <string name="grn_no">GRN No</string>
+    <string name="scroll_right_to_view_full_order">Scroll Right To View Full Order</string>
+    <string name="pickupAddress">Eco Green Pvt Ltd. C22, Warehouse No 5, Main Market, Noida Sec 137, UP 201301.</string>
+    <string name="dropAddress"><![CDATA[GenX Wholesale Pvt Ltd. F12, Warehouse No 7, Gate -2, Noida Sec 12, UP 201301]]></string>
+    <string name="assigned_by_emines">Assigned by eMines.</string>
+    <string name="login_as_transporter_your_mobile_number_must_be_registered_with_emines">Your mobile number must be registered with eMines.</string>
+    <string name="transporter">Transporter.</string>
+    <string name="eco_green_pvt_ltd">Eco Green Pvt Ltd</string>
+    <string name="view_weight_receipt">View Weight Receipt</string>
+    <string name="view_grn">View GRN</string>
+    <string name="view_eWayBil">View EWay Bill</string>
+    <string name="login_as_transporter">Login As Transporter</string>
+    <string name="new_order">New Order</string>
+    <string name="assigned">Assigned</string>
+    <string name="denied">Denied</string>
+    <string name="truck_number">Truck Number</string>
+    <string name="truck_dl4cbt8855">Dl4CBT8855</string>
+    <string name="assigned_date">Assigned Date:</string>
+    <string name="pickup_date">PickUp date :</string>
+    <string name="delivery_date">Delivery Date :</string>
+    <string name="choose_file">Choose file</string>
+    <string name="document">Document</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+    <string name="file_not_uploaded">File not uploaded!</string>
+    <string name="image_should_be_less_then_or_equal_2mb">Image should be less then or equal 2MB</string>
+    <string name="pdf_should_be_less_then_or_equal_2mb">Pdf should be less then or equal 2MB</string>
+    <string name="please_upload_weight_receipt">Please upload weight receipt!</string>
+    <string name="please_upload_grn_receipt">Please upload GRN receipt!</string>
+    <string name="please_upload_eway_bill_receipt">Please upload eWay bill receipt!</string>
+    <string name="no_data_available">No Order Available !</string>
+    <string name="weight_12">Weight : 12</string>
+    <string name="download">Download</string>
+    <string name="downloading">Downloading</string>
+    <string name="please_enable_required_permission">Please enable required permission</string>
+
+    <string-array name="order_id">
+        <item>101</item>
+        <item>102</item>
+        <item>103</item>
+        <item>104</item>
+        <item>105</item>
+    </string-array>
+
+    <string-array name="unit_type">
+        <item>MT</item>
+        <item>Kg</item>
+    </string-array>
+
+    <string-array name="issue_type">
+        <item>dent</item>
+        <item>rube</item>
+        <item>Waist</item>
+        <item>Worst</item>
+        <item>Little</item>
+    </string-array>
+
+
+    <string-array name="kg_unit">
+        <item>Ton</item>
+        <item>Kg</item>
+        <item>g</item>
+        <item>mg</item>
+        <item>Kuntal</item>
+    </string-array>
+
+</resources>

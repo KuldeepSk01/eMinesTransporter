@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/scrollViewHom2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollIndicators="none"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <!--
+                        tools:context=".screen.dashboard.home.HomeFragment"
+                -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingBottom="@dimen/_50sdp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clProfileHome2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_toolbar_bg_1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvProfileHomeImg"
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="@dimen/_80sdp"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:layout_marginTop="@dimen/_30sdp"
+                            android:padding="@dimen/_5sdp"
+                            app:cardCornerRadius="@dimen/_50sdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+
+                            >
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ivProfileHomeImg"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/verify_img" />
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvProfileHomeUserName"
+                            style="@style/TextStyle1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginTop="@dimen/_20sdp"
+                            android:fontFamily="@font/inter_bold"
+                            android:text="@string/gajendra_singh"
+                            app:layout_constraintStart_toEndOf="@+id/cvProfileHomeImg"
+                            app:layout_constraintTop_toTopOf="@+id/cvProfileHomeImg" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvProfileHomeUserAddress"
+                            style="@style/TextStyle1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/agm_noida"
+                            app:layout_constraintStart_toStartOf="@+id/tvProfileHomeUserName"
+                            app:layout_constraintTop_toBottomOf="@+id/tvProfileHomeUserName" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvProfileHomeUserOnlineStatus"
+                            style="@style/TextStyle1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/online"
+                            app:layout_constraintStart_toStartOf="@+id/tvProfileHomeUserName"
+                            app:layout_constraintTop_toBottomOf="@+id/tvProfileHomeUserAddress" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvProfileHome2AttendanceBtn"
+                            style="@style/Home2BtnStyle"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_width="@dimen/_80sdp"
+                            android:text="@string/attendance_text"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/cvProfileHomeImg" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvProfileHom2DashboardBtn"
+                            style="@style/Home2BtnStyle"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_width="@dimen/_80sdp"
+                            android:text="@string/dashboard"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tvProfileHome2AttendanceBtn" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvProfileHom2HomeBtn"
+                            style="@style/Home2BtnStyle"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_width="@dimen/_80sdp"
+                            android:text="@string/home"
+                            app:layout_constraintEnd_toEndOf="@+id/tvProfileHom2DashboardBtn"
+                            app:layout_constraintTop_toBottomOf="@+id/tvProfileHom2DashboardBtn" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvProfileHom2MyAttendanceBtn"
+                            style="@style/Home2BtnStyle"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_20sdp"
+                            android:layout_width="@dimen/_80sdp"
+                            android:text="@string/target"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/tvProfileHom2HomeBtn"
+                            app:layout_constraintTop_toBottomOf="@+id/tvProfileHom2HomeBtn"
+
+                            />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <GridLayout
+                        android:id="@+id/gridlayout1Home2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:columnCount="2"
+                        android:padding="@dimen/_10sdp"
+                        android:rowCount="3"
+                        app:layout_constraintTop_toBottomOf="@+id/clProfileHome2">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="0"
+                            android:layout_column="0"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:layout_columnWeight="1"
+                            android:background="@drawable/buyer_outline_drawable">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvBuyerBtn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pickup"
+                                style="@style/Home2BuyerBtnStyle" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvBuyerCount"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_12"
+                                style="@style/TextStyle2"
+                                android:gravity="center"
+                                android:layout_margin="@dimen/_5sdp" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="0"
+                            android:layout_column="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:layout_columnWeight="1"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:background="@drawable/seller_outline_drawable">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvSellerBtn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/seller"
+                                style="@style/Home2BuyerBtnStyle"
+                                android:background="@drawable/seller_btn_drawable" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvSellerCount"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_12"
+                                style="@style/TextStyle2"
+                                android:gravity="center"
+                                android:layout_margin="@dimen/_5sdp" />
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="1"
+                            android:layout_column="0"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:layout_columnWeight="1"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@drawable/delevery_order_outline_drawable">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvDeliveredOrderBtn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/delivered_order"
+                                style="@style/Home2BuyerBtnStyle"
+                                android:background="@drawable/delivered_order_btn_drawable" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvDeliveredOrderCount"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_12"
+                                style="@style/TextStyle2"
+                                android:gravity="center"
+                                android:layout_margin="@dimen/_5sdp" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="1"
+                            android:layout_column="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_columnWeight="1"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:background="@drawable/complete_pickup_outline_drawable">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvCompletePickupBtn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/complete_pickup"
+                                style="@style/Home2BuyerBtnStyle"
+                                android:background="@drawable/pickup_btn_drawable" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvCompletePickupCount"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_12"
+                                style="@style/TextStyle2"
+                                android:gravity="center"
+                                android:layout_margin="@dimen/_5sdp" />
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="2"
+                            android:layout_column="0"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:layout_columnWeight="1"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@drawable/schedule_order_outline_drawable">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvScheduleOrderBtn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/scheduled_order"
+                                style="@style/Home2BuyerBtnStyle"
+                                android:background="@drawable/schedule_order_btn_drawable" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvScheduleOrderCount"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_12"
+                                style="@style/TextStyle2"
+                                android:gravity="center"
+                                android:layout_margin="@dimen/_5sdp" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_row="2"
+                            android:layout_column="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:layout_columnWeight="1"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:background="@drawable/schedule_pickup_outline_drawable">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvSchedulePickupBtn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/scheduled_pickup"
+                                style="@style/Home2BuyerBtnStyle"
+                                android:background="@drawable/schedule_pickup_btn_drawable" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvSchedulePickupCount"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/_12"
+                                style="@style/TextStyle2"
+                                android:gravity="center"
+                                android:layout_margin="@dimen/_5sdp" />
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    </GridLayout>
+
+                    <GridLayout
+                        android:id="@+id/gridlayout2Home2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/gridlayout1Home2"
+                        android:rowCount="3"
+                        android:columnCount="2"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvPrivacyPolicyHome2"
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="@dimen/_125sdp"
+                            android:layout_row="0"
+                            android:layout_column="0"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="@dimen/_5sdp"
+                            app:cardCornerRadius="@dimen/_10sdp">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="@dimen/_80sdp"
+                                    android:layout_height="@dimen/_80sdp"
+                                    app:cardCornerRadius="@dimen/_50sdp"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:layout_gravity="center_horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:src="@drawable/privacy_img"
+                                        android:layout_width="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:layout_margin="@dimen/_20sdp"
+                                        android:layout_height="match_parent" />
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/privacy_policy"
+                                    android:gravity="center"
+                                    android:layout_marginTop="@dimen/_10sdp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvAboutUsHome2"
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="@dimen/_125sdp"
+                            android:layout_row="0"
+                            android:layout_column="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="@dimen/_5sdp"
+                            app:cardCornerRadius="@dimen/_10sdp">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="@dimen/_80sdp"
+                                    android:layout_height="@dimen/_80sdp"
+                                    app:cardCornerRadius="@dimen/_50sdp"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:layout_gravity="center_horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:src="@drawable/about_img"
+                                        android:layout_width="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:layout_margin="@dimen/_20sdp"
+                                        android:layout_height="match_parent" />
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/about_us"
+                                    android:gravity="center"
+                                    android:layout_marginTop="@dimen/_10sdp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvFAQHome2"
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="@dimen/_125sdp"
+                            android:layout_row="1"
+                            android:layout_column="0"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="@dimen/_5sdp"
+                            app:cardCornerRadius="@dimen/_10sdp">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="@dimen/_80sdp"
+                                    android:layout_height="@dimen/_80sdp"
+                                    app:cardCornerRadius="@dimen/_50sdp"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:layout_gravity="center_horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:src="@drawable/faq_img"
+                                        android:layout_width="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:layout_margin="@dimen/_20sdp"
+                                        android:layout_height="match_parent" />
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/faq"
+                                    android:gravity="center"
+                                    android:layout_marginTop="@dimen/_10sdp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvSupportHome2"
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="@dimen/_125sdp"
+                            android:layout_row="1"
+                            android:layout_column="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="@dimen/_5sdp"
+                            app:cardCornerRadius="@dimen/_10sdp">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="@dimen/_80sdp"
+                                    android:layout_height="@dimen/_80sdp"
+                                    app:cardCornerRadius="@dimen/_50sdp"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:layout_gravity="center_horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:src="@drawable/support_img"
+                                        android:layout_width="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:layout_margin="@dimen/_20sdp"
+                                        android:layout_height="match_parent" />
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/support"
+                                    android:gravity="center"
+                                    android:layout_marginTop="@dimen/_10sdp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvContactAdminHome2"
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="@dimen/_125sdp"
+                            android:layout_row="2"
+                            android:layout_column="0"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="@dimen/_5sdp"
+                            app:cardCornerRadius="@dimen/_10sdp">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="@dimen/_80sdp"
+                                    android:layout_height="@dimen/_80sdp"
+                                    app:cardCornerRadius="@dimen/_50sdp"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:layout_gravity="center_horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:src="@drawable/faq_img"
+                                        android:layout_width="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:layout_margin="@dimen/_20sdp"
+                                        android:layout_height="match_parent" />
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/contact_admin"
+                                    android:gravity="center"
+                                    android:layout_marginTop="@dimen/_10sdp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cvHomeHome2"
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="@dimen/_125sdp"
+                            android:layout_row="2"
+                            android:layout_column="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="@dimen/_5sdp"
+                            app:cardCornerRadius="@dimen/_10sdp">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="@dimen/_80sdp"
+                                    android:layout_height="@dimen/_80sdp"
+                                    app:cardCornerRadius="@dimen/_50sdp"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:layout_gravity="center_horizontal">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:src="@drawable/support_img"
+                                        android:layout_width="match_parent"
+                                        android:scaleType="centerCrop"
+                                        android:layout_margin="@dimen/_20sdp"
+                                        android:layout_height="match_parent" />
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/home"
+                                    android:gravity="center"
+                                    android:layout_marginTop="@dimen/_10sdp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </GridLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </RelativeLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
