@@ -86,6 +86,9 @@ data class TransporterOrderResponse(
     val pickup_date: String,
     val reached_date: String,
     val delivery_date: String,
+    val estimated_delivery_date: String,
+    val total_orders_againest_po: Int,
+
 
 
     val pickup_weight: String,

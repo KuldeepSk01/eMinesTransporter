@@ -45,11 +45,14 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvItemPickupAssignedDate"
                 style="@style/defaultTextStyle"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:layout_constraintEnd_toStartOf="@+id/tvItemPoNo"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/inter_medium"
                 android:textColor="@color/black"
                 android:text="@string/assigned_date"
+
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvItemPickupBReqIdText" />
 
@@ -92,7 +95,7 @@
                 android:background="@color/box_color_2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvItemPoNo" />
+                app:layout_constraintTop_toBottomOf="@+id/tvItemPickupAssignedDate" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/ivItemAddressPickupImg"

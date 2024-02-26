@@ -37,12 +37,13 @@ class PickupListAdapter(
         holder.b.apply {
             Glide.with(context).load(Constants.DefaultConstant.DRIVER_ORDER_IMAGE).into(ivItemAddressPickupImg)
 
-            tvItemPickupId.text = String.format("%s%s","EMS000",model.id.toString())
+            tvItemPickupId.text = String.format("%s%s",context.getString(R.string.defultId),model.id.toString())
             tvPickupAddress.text = model.destination //this is pickup date
             tvTotalCategoryPickup.text = model.total_order_category
             tvItemPoNo.text = model.po_no
             tvTotalWeightPickup.text = model.total_purchased_quantity
-            tvItemPickupDate.text = model.po_date
+            tvItemPickupDate.text =  if (model.delivery_date.isNullOrEmpty()) model.estimated_delivery_date else model.delivery_date
+            //tvItemPickupDate.text = model.po_date
             tvPODropAddressItemPickupBReq.text = model.address //this is drop location
             tvItemPickupAssignedDate.text = String.format("%s %s","Assigned Date :",model.assigned_date)
 

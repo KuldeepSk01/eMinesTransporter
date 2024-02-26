@@ -77,7 +77,6 @@ class HomeFragment : BaseFragment() {
                         val transporter = it.data?.data?.driver
                        // mPref.setUserDetail(transporter)
 
-
                         it.data?.data?.let {
                             tvProfileHomeCompanyName.text = it.company
                             tvPickUpCount.text = it.pickupOrders.toString()

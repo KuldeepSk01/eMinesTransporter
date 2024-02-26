@@ -81,11 +81,12 @@
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/tvItemPickupAssignedDate"
                             style="@style/defaultTextStyle"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/inter_medium"
                             android:textColor="@color/black"
                             android:text="@string/assigned_date"
+                            app:layout_constraintEnd_toStartOf="@+id/tvStatus"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/tvPONoPickupDetail" />
 
@@ -95,11 +96,13 @@
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/tvStatus"
                             style="@style/defaultTextStyle"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:gravity="end"
                             android:layout_marginEnd="@dimen/_10sdp"
                             android:fontFamily="@font/inter_medium"
                             android:text="@string/picked_up"
+                            android:layout_marginStart="@dimen/_10sdp"
                             android:textColor="@color/order_complete_color"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="1"
@@ -1096,7 +1099,7 @@
                                 android:gravity="end"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/inter_medium"
-                                android:text="@string/delivery_date"
+                                android:text="@string/est_delivery_date"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/tvPONoTextDeliveredDetail" />
                             <androidx.appcompat.widget.AppCompatTextView
@@ -1107,7 +1110,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="@dimen/_10sdp"
                                 android:fontFamily="@font/inter_medium"
-                                android:text="@string/est_delivery_date_25jan2024"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/tvDropLocationPickupDetail" />
 

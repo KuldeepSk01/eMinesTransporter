@@ -60,8 +60,8 @@ class PickUpDetailActivity : BaseActivity() {
         mBind.apply {
             toolBarPickupDetail.apply {
                 tvToolBarTitle.text = String.format(
-                    "%s %s",
-                    getString(R.string.order_id_text),
+                    "%s %s%s",
+                    getString(R.string.order_id_text),getString(R.string.defultId),
                     transporterOrderResponse.id.toString()
                 )
                 ivToolBarBack.setOnClickListener {
@@ -342,6 +342,7 @@ class PickUpDetailActivity : BaseActivity() {
         mBind.apply {
             tvPONoPickupDetail.text = it.po_no
 
+            tvDropDatePickupDetail.text = if (it.delivery_date.isNullOrEmpty()) it.estimated_delivery_date else it.delivery_date
             tvPickupLocation.text = it.destination //this is picked up location
             tvDropLocationPickupDetail.text = it.address // this is drop location
             tvItemPickupAssignedDate.text =
@@ -453,7 +454,6 @@ class PickUpDetailActivity : BaseActivity() {
              tvGst4.text = it.four_product_gst
              tvTAmount4.text = it.four_total_unit_price_excl_gst
              tvGstAmount4.text = it.four_total_unit_price_incl_gst*/
-            tvDropDatePickupDetail.text = it.po_date
             if (it.two_requested_product.isEmpty()) {
                 llcGoods2.visibility = View.GONE
             } else {

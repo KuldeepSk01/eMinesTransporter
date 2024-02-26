@@ -90,9 +90,10 @@
                             <androidx.appcompat.widget.AppCompatTextView
                                 android:id="@+id/tvAssignedDate"
                                 style="@style/defaultTextStyle"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/inter_medium"
+                                app:layout_constraintEnd_toStartOf="@+id/tvBReqStatus"
                                 android:text="@string/assigned_date"
                                 android:textColor="@color/black"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -102,11 +103,12 @@
                             <androidx.appcompat.widget.AppCompatTextView
                                 android:id="@+id/tvBReqStatus"
                                 style="@style/defaultTextStyle"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
+                                android:gravity="end"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="@dimen/_10sdp"
+                                android:layout_marginStart="@dimen/_10sdp"
                                 android:fontFamily="@font/inter_medium"
-                                android:text="@string/delivered"
                                 android:textColor="@color/order_complete_color"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="1"
@@ -1126,7 +1128,6 @@
                                     android:layout_marginBottom="@dimen/_10sdp"
                                     android:fontFamily="@font/inter_medium"
                                     android:gravity="end"
-                                    android:text="@string/est_delivery_date_25jan2024"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintTop_toBottomOf="@+id/tvDropLocationDeliveredDetail" />
 

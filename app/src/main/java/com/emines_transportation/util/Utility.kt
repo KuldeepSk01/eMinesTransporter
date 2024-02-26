@@ -58,28 +58,6 @@ fun setLocationPermission(isEnableLocationEnable: Boolean) {
     isLocationEnable = isEnableLocationEnable
 }
 
-private fun setGpsProvider(context: Context) {
-//            val manager = getSystemService(Context.LOCATION_SERVICE) as LocationManager?
-//            if (!manager?.isProviderEnabled(LocationManager.GPS_PROVIDER)!!) {
-//                isGpEnable = true
-//                buildAlertMessageNoGps(context);
-//            }else{
-//                isGpEnable = true
-//            }
-}
-
-private fun buildAlertMessageNoGps(context: Context) {
-    val builder = AlertDialog.Builder(context)
-    builder.setMessage("Your GPS seems to be disabled, do you want to enable it?")
-        .setCancelable(false)
-        .setPositiveButton("Yes",
-            DialogInterface.OnClickListener { dialog, id -> context.startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)) })
-        .setNegativeButton("No",
-            DialogInterface.OnClickListener { dialog, id -> dialog.cancel() })
-    val alert: AlertDialog = builder.create()
-    alert.show()
-}
-
 fun setContext(c: Context) {
     context = c
 }
@@ -354,8 +332,6 @@ fun requestStoragePermissionAbove32(activity: Activity) {
 // navigating user to app settings
 private fun openSettings(activity: Activity) {
 
-    //val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-   // val intent = Intent(Settings.ACTION_SETTINGS)
   //  val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS) //this is open location setting
     val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS) //this is open location setting
     intent.data = Uri.parse("package:" + activity.packageName)

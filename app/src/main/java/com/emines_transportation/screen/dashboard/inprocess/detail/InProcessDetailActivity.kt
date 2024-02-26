@@ -64,8 +64,8 @@ class InProcessDetailActivity : BaseActivity() {
         mBind.apply {
             toolBarInProcessDetail.apply {
                 tvToolBarTitle.text = String.format(
-                    "%s %s",
-                    getString(R.string.order_id_text),
+                    "%s %s%s",
+                    getString(R.string.order_id_text),getString(R.string.defultId),
                     transporterOrderResponse.id.toString()
                 )
                 ivToolBarBack.setOnClickListener {
@@ -245,7 +245,7 @@ class InProcessDetailActivity : BaseActivity() {
 
                             override fun onCameraClick(dialog: BottomSheetDialog) {
                                 if (verifyCameraPermission(this@InProcessDetailActivity)){
-                                    startActivityCamera1.launch(Intent(MediaStore.ACTION_IMAGE_CAPTURE))
+                                    startActivityCamera2.launch(Intent(MediaStore.ACTION_IMAGE_CAPTURE))
                                 }
                                 else {
                                     showSettingsDialog(this@InProcessDetailActivity)
@@ -541,9 +541,9 @@ class InProcessDetailActivity : BaseActivity() {
             tvDropLocationInProcessDetail.text = it.address
             tvItemPickupAssignedDate.text =
                 String.format("%s %s", "Assigned Date :", it.assigned_date)
+            tvDeliveryDate.text = if (it.delivery_date.isNullOrEmpty()) it.estimated_delivery_date else it.delivery_date
 
-
-            tvDeliveryDate.text = it.delivery_date
+           // tvDeliveryDate.text = it.delivery_date
             tvPickupDate.text = it.pickup_date
             tvStatusAcceptedInProcessDetail.text =
                 String.format("%s, %s", getString(R.string.reached), it.reached_date)

@@ -33,7 +33,11 @@ class DeliveredDetailActivity : BaseActivity() {
                 ivToolBarBack.setOnClickListener {
                     onBackPressedDispatcher.onBackPressed()
                 }
-                tvToolBarTitle.text = "Order ID : 12"
+                tvToolBarTitle.text = String.format(
+                    "%s %s%s",
+                    getString(R.string.order_id_text),getString(R.string.defultId),
+                    transporterOrderResponse.id.toString()
+                )
             }
 
             bottomButtons.apply {
@@ -98,9 +102,8 @@ class DeliveredDetailActivity : BaseActivity() {
                 tvPONoDeliveredDetail.text = it.po_no
                 tvPickupLocation.text = it.destination
                 tvDropLocationDeliveredDetail.text = it.address
-
+                tvItemDeliveryDate.text = if (it.delivery_date.isNullOrEmpty()) it.estimated_delivery_date else it.delivery_date
                 tvPickupDate.text = it.pickup_date
-                tvItemDeliveryDate.text = it.delivery_date
                 tvAssignedDate.text = String.format("%s %s","Assigned Date :",it.assigned_date)
 
 

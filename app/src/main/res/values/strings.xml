@@ -466,6 +466,7 @@
     <string name="download">Download</string>
     <string name="downloading">Downloading</string>
     <string name="please_enable_required_permission">Please enable required permission</string>
+    <string name="defultId">PR00</string>
 
     <string-array name="order_id">
         <item>101</item>
