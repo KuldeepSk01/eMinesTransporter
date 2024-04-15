@@ -26,6 +26,7 @@ import com.emines_transportation.util.checkFileSize
 import com.emines_transportation.util.compressImageFilePath
 import com.emines_transportation.util.getCurrentDate
 import com.emines_transportation.util.getRealPathFromURI
+import com.emines_transportation.util.isConnectionAvailable
 import com.emines_transportation.util.mLog
 import com.emines_transportation.util.mToast
 import com.emines_transportation.util.serializable
@@ -307,13 +308,20 @@ class PickUpDetailActivity : BaseActivity() {
     }
 
     private fun hitChangeOrderStatus(status: String) {
-        mViewModel.hitChangeOrderStatusByTransporterApi(
-            mPref.getUserDetail().id,
-            transporterOrderResponse.id,
-            status
-        )
-        mViewModel.getChangeOrderStatusByTransporterResponse()
-            .observe(this@PickUpDetailActivity, changerOrderStatusObserver)
+        if (isConnectionAvailable()){
+            mViewModel.hitChangeOrderStatusByTransporterApi(
+                mPref.getUserDetail().id,
+                transporterOrderResponse.id,
+                status
+            )
+            mViewModel.getChangeOrderStatusByTransporterResponse()
+                .observe(this@PickUpDetailActivity, changerOrderStatusObserver)
+        }else{
+            mToast(getString(R.string.no_internet_available))
+        }
+
+
+
     }
 
     private val changerOrderStatusObserver: Observer<ApiResponse<SuccessMsgResponse>> by lazy {
@@ -340,8 +348,10 @@ class PickUpDetailActivity : BaseActivity() {
 
     private fun setDetail(it: TransporterOrderResponse) {
         mBind.apply {
-            tvPONoPickupDetail.text = it.po_no
 
+            tvOrderDeliveryCharge.text = String.format("%s %s",getString(R.string.indian_rupee_symbol),it.estimated_delivery_rate)
+
+            tvPONoPickupDetail.text = it.po_no
             tvDropDatePickupDetail.text = if (it.delivery_date.isNullOrEmpty()) it.estimated_delivery_date else it.delivery_date
             tvPickupLocation.text = it.destination //this is picked up location
             tvDropLocationPickupDetail.text = it.address // this is drop location

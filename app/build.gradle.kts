@@ -13,18 +13,20 @@ android {
         viewBinding = true
     }
 
+
     defaultConfig {
         applicationId = "com.emines_transportation"
         minSdk = 24
         targetSdk = 34
-        versionCode = 4
-        versionName = "1.3" //updates on 15Feb2024
+        versionCode = 7
+        versionName = "1.7" //updates on 15Feb2024 10April2024 5(1.4)
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         /*keystore
         * Key alias : EminesTransporter
+        * file :  eMinesTransporter.jks
         * password : EminesTransporter
         * */
         release {
@@ -79,9 +81,6 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
     implementation("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2")
-// coroutine
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
 
     //dexter
     implementation ("com.karumi:dexter:6.2.3")
@@ -93,6 +92,11 @@ dependencies {
 
 
     //for custom calender
+
+
+//for auto update application version when versioncode is upgraded
+    implementation("com.google.android.play:app-update:2.1.0")
+    implementation("com.google.android.play:app-update-ktx:2.1.0")
 
 
 

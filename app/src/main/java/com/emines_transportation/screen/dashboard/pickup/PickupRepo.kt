@@ -321,4 +321,50 @@ class PickupRepo : BaseRepository() {
     }
 
 
+    fun uploadDeliveredBill(
+        transporterId: Int,
+        orderId: Int,
+        deliveredBillReceipt: String?,
+        responseLiveData: MutableLiveData<ApiResponse<SuccessMsgResponse>>
+    ) {
+        val call = apiService.uploadDeliveredBillTransporter(
+            MultipartHelper.getRequestBody(transporterId.toString()),
+            MultipartHelper.getRequestBody(orderId.toString()),
+            MultipartHelper.getMultipartData(deliveredBillReceipt, "upload_delivery_bill_file")
+        )
+        responseLiveData.value = ApiResponse.loading()
+        call.enqueue(object : Callback<SuccessMsgResponse> {
+            override fun onResponse(
+                call: Call<SuccessMsgResponse>,
+                response: Response<SuccessMsgResponse>
+            ) {
+                try {
+                    if (response.body()?.status!!) {
+                        responseLiveData.postValue(ApiResponse.success(response.body()!!))
+                    } else {
+                        responseLiveData.postValue(ApiResponse.error(Throwable(response.body()!!.message)))
+                    }
+                } catch (e: Exception) {
+                    responseLiveData.postValue(ApiResponse.error(Throwable(e.message)))
+                }
+
+            }
+
+            override fun onFailure(
+                call: Call<SuccessMsgResponse>,
+                t: Throwable
+            ) {
+                if (t.message.equals("Software caused connection abort")) {
+                    responseLiveData.postValue(ApiResponse.error(Throwable(Constants.NetworkConstant.CONNECTION_LOST)))
+                } else {
+                    mLog("Buyers Repo onFailure: ${t.message}")
+                    responseLiveData.postValue(ApiResponse.error(t))
+                }
+            }
+
+        })
+    }
+
+
+
 }

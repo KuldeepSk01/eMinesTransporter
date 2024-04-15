@@ -163,6 +163,8 @@
     <string name="back_cap">BACK</string>
     <string name="buyer_info">Buyer Info</string>
     <string name="pan_number">PAN Number</string>
+    <string name="company_pan_number">Company PAN </string>
+    <string name="company_gst_number">Company GST</string>
     <string name="upload_pan">Upload PAN</string>
     <string name="aadhaar_number">Aadhaar Number</string>
     <string name="gst_number">GST Certificate Number</string>
@@ -467,6 +469,9 @@
     <string name="downloading">Downloading</string>
     <string name="please_enable_required_permission">Please enable required permission</string>
     <string name="defultId">PR00</string>
+    <string name="no_pan_found">No Pan Card Found !</string>
+    <string name="no_gst_found">No GST Found !</string>
+    <string name="no_internet_available">No Internet Available!!</string>
 
     <string-array name="order_id">
         <item>101</item>

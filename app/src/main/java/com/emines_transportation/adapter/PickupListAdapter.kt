@@ -14,18 +14,16 @@ import com.emines_transportation.model.response.TransporterOrderResponse
 import com.emines_transportation.util.Constants
 
 class PickupListAdapter(
-    val list: MutableList<TransporterOrderResponse>, val context: Context, private val listener: OnClickPickupListener
-) :
-    RecyclerView.Adapter<PickupListAdapter.PickupSellerVM>() {
+    val list: MutableList<TransporterOrderResponse>,
+    val context: Context,
+    private val listener: OnClickPickupListener
+) : RecyclerView.Adapter<PickupListAdapter.PickupSellerVM>() {
     class PickupSellerVM(val b: ItemPickupLayoutBinding) : ViewHolder(b.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PickupSellerVM {
         return PickupSellerVM(
             DataBindingUtil.inflate(
-                LayoutInflater.from(parent.context),
-                R.layout.item_pickup_layout,
-                parent,
-                false
+                LayoutInflater.from(parent.context), R.layout.item_pickup_layout, parent, false
             )
         )
     }
@@ -35,50 +33,62 @@ class PickupListAdapter(
     override fun onBindViewHolder(holder: PickupSellerVM, position: Int) {
         val model = list[position]
         holder.b.apply {
-            Glide.with(context).load(Constants.DefaultConstant.DRIVER_ORDER_IMAGE).into(ivItemAddressPickupImg)
+            Glide.with(context).load(Constants.DefaultConstant.DRIVER_ORDER_IMAGE)
+                .into(ivItemAddressPickupImg)
 
-            tvItemPickupId.text = String.format("%s%s",context.getString(R.string.defultId),model.id.toString())
+            tvOrderDeliveryCharge.text = String.format("%s %s",context.getString(R.string.indian_rupee_symbol),model.estimated_delivery_rate)
+            tvItemPickupId.text =
+                String.format("%s%s", context.getString(R.string.defultId), model.id.toString())
             tvPickupAddress.text = model.destination //this is pickup date
             tvTotalCategoryPickup.text = model.total_order_category
             tvItemPoNo.text = model.po_no
             tvTotalWeightPickup.text = model.total_purchased_quantity
-            tvItemPickupDate.text =  if (model.delivery_date.isNullOrEmpty()) model.estimated_delivery_date else model.delivery_date
+            tvItemPickupDate.text =
+                if (model.delivery_date.isNullOrEmpty()) model.estimated_delivery_date else model.delivery_date
             //tvItemPickupDate.text = model.po_date
             tvPODropAddressItemPickupBReq.text = model.address //this is drop location
-            tvItemPickupAssignedDate.text = String.format("%s %s","Assigned Date :",model.assigned_date)
+            tvItemPickupAssignedDate.text =
+                String.format("%s %s", "Assigned Date :", model.assigned_date)
 
             tvOrderStatus.apply {
-                when(model.status) {
-                    context.getString(R.string.assigned)->{
-                        text = String.format("%s, %s",model.status," ${model.assigned_date}")
+                when (model.status) {
+                    context.getString(R.string.assigned) -> {
+                        text = String.format("%s, %s", model.status, " ${model.assigned_date}")
                         setTextColor(context.getColor(R.color.order_complete_color))
                     }
-                    context.getString(R.string.new_order)->{
+
+                    context.getString(R.string.new_order) -> {
                         text = model.status
                         setTextColor(context.getColor(R.color.order_complete_color))
                     }
-                    context.getString(R.string.reached)->{
-                        text = String.format("%s, %s",model.status," ${model.reached_date}")
+
+                    context.getString(R.string.reached) -> {
+                        text = String.format("%s, %s", model.status, " ${model.reached_date}")
                         setTextColor(context.getColor(R.color.order_accepted_color))
                     }
-                    context.getString(R.string.accepted)->{
-                        text = String.format("%s, %s",model.status," ${model.accepte_date}")
+
+                    context.getString(R.string.accepted) -> {
+                        text = String.format("%s, %s", model.status, " ${model.accepte_date}")
                         setTextColor(context.getColor(R.color.order_accepted_color))
                     }
-                    context.getString(R.string.delivered)->{
+
+                    context.getString(R.string.delivered) -> {
                         tvEstDate.text = "Delivered Date"
-                        text = String.format("%s, %s",model.status," ${model.delivery_date}")
+                        text = String.format("%s, %s", model.status, " ${model.delivery_date}")
                         setTextColor(context.getColor(R.color.order_complete_color))
                     }
-                    context.getString(R.string.picked_up)->{
-                        text = String.format("%s, %s",model.status," ${model.pickup_date}")
+
+                    context.getString(R.string.picked_up) -> {
+                        text = String.format("%s, %s", model.status, " ${model.pickup_date}")
                         setTextColor(context.getColor(R.color.order_picked_color))
                     }
-                    context.getString(R.string.denied)->{
-                        text = String.format("%s, %s",model.status," ${model.denied_date}")
+
+                    context.getString(R.string.denied) -> {
+                        text = String.format("%s, %s", model.status, " ${model.denied_date}")
                         setTextColor(context.getColor(R.color.order_cancel_color))
                     }
-                    context.getString(R.string.in_process)->{
+
+                    context.getString(R.string.in_process) -> {
                         setTextColor(context.getColor(R.color.order_picked_color))
                     }
                 }

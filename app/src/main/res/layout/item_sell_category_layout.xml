@@ -24,8 +24,8 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="@dimen/_50sdp"
-                android:layout_height="@dimen/_50ssp"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40ssp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

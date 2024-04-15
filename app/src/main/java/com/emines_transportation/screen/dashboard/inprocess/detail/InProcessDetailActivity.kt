@@ -3,7 +3,6 @@ package com.emines_transportation.screen.dashboard.inprocess.detail
 import android.app.Activity
 import android.app.Dialog
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Build
@@ -30,6 +29,7 @@ import com.emines_transportation.util.compressImageFilePath
 import com.emines_transportation.util.downloadFileFromUrl
 import com.emines_transportation.util.getBytes
 import com.emines_transportation.util.getRealPathFromURI
+import com.emines_transportation.util.isConnectionAvailable
 import com.emines_transportation.util.mLog
 import com.emines_transportation.util.mToast
 import com.emines_transportation.util.serializable
@@ -65,7 +65,8 @@ class InProcessDetailActivity : BaseActivity() {
             toolBarInProcessDetail.apply {
                 tvToolBarTitle.text = String.format(
                     "%s %s%s",
-                    getString(R.string.order_id_text),getString(R.string.defultId),
+                    getString(R.string.order_id_text),
+                    getString(R.string.defultId),
                     transporterOrderResponse.id.toString()
                 )
                 ivToolBarBack.setOnClickListener {
@@ -110,15 +111,14 @@ class InProcessDetailActivity : BaseActivity() {
                                     mLog("PERMISSION_GRANTED 13")
                                     startActivityForWeightReceipt.launch(gallery)
                                 } else {
-                                    if (verifyStoragePermission(this@InProcessDetailActivity)){
+                                    if (verifyStoragePermission(this@InProcessDetailActivity)) {
                                         val gallery = Intent(
                                             Intent.ACTION_PICK,
                                             MediaStore.Images.Media.INTERNAL_CONTENT_URI
                                         )
                                         mLog("setInitialSetup: PERMISSION_GRANTED below 13")
                                         startActivityForWeightReceipt.launch(gallery)
-                                    }
-                                    else {
+                                    } else {
                                         showSettingsDialog(this@InProcessDetailActivity)
                                         //mToast(getString(R.string.please_enable_required_permission))
                                     }
@@ -136,24 +136,21 @@ class InProcessDetailActivity : BaseActivity() {
                                     pdfIntent.addCategory(Intent.CATEGORY_OPENABLE)
                                     startActivityForPDF.launch(
                                         Intent.createChooser(
-                                            pdfIntent,
-                                            "Select PDF file"
+                                            pdfIntent, "Select PDF file"
                                         )
                                     )
 
                                 } else {
-                                    if (verifyStoragePermission(this@InProcessDetailActivity)){
+                                    if (verifyStoragePermission(this@InProcessDetailActivity)) {
                                         val pdfIntent = Intent(Intent.ACTION_GET_CONTENT)
                                         pdfIntent.type = "application/pdf"
                                         pdfIntent.addCategory(Intent.CATEGORY_OPENABLE)
                                         startActivityForPDF.launch(
                                             Intent.createChooser(
-                                                pdfIntent,
-                                                "Select PDF file"
+                                                pdfIntent, "Select PDF file"
                                             )
                                         )
-                                    }
-                                    else {
+                                    } else {
                                         showSettingsDialog(this@InProcessDetailActivity)
                                         //mToast(getString(R.string.please_enable_required_permission))
                                     }
@@ -164,10 +161,9 @@ class InProcessDetailActivity : BaseActivity() {
                             }
 
                             override fun onCameraClick(dialog: BottomSheetDialog) {
-                                if (verifyCameraPermission(this@InProcessDetailActivity)){
+                                if (verifyCameraPermission(this@InProcessDetailActivity)) {
                                     startActivityCamera1.launch(Intent(MediaStore.ACTION_IMAGE_CAPTURE))
-                                }
-                                else {
+                                } else {
                                     showSettingsDialog(this@InProcessDetailActivity)
                                     //mToast(getString(R.string.please_enable_required_permission))
                                 }
@@ -191,18 +187,15 @@ class InProcessDetailActivity : BaseActivity() {
                                     startActivityForGRN.launch(gallery)
 
                                 } else {
-                                    if (verifyStoragePermission(this@InProcessDetailActivity)){
+                                    if (verifyStoragePermission(this@InProcessDetailActivity)) {
                                         val gallery = Intent(
                                             Intent.ACTION_PICK,
                                             MediaStore.Images.Media.INTERNAL_CONTENT_URI
                                         )
                                         mLog("setInitialSetup: PERMISSION_GRANTED below 13")
                                         startActivityForGRN.launch(gallery)
-                                    }
-                                    else {
+                                    } else {
                                         showSettingsDialog(this@InProcessDetailActivity)
-
-                                        //mToast(getString(R.string.please_enable_required_permission))
                                     }
                                 }
 
@@ -217,26 +210,23 @@ class InProcessDetailActivity : BaseActivity() {
                                     pdfIntent.addCategory(Intent.CATEGORY_OPENABLE)
                                     startActivityForGRNPDF.launch(
                                         Intent.createChooser(
-                                            pdfIntent,
-                                            "Select PDF file"
+                                            pdfIntent, "Select PDF file"
                                         )
                                     )
 
                                 } else {
-                                    if (verifyStoragePermission(this@InProcessDetailActivity)){
+                                    if (verifyStoragePermission(this@InProcessDetailActivity)) {
                                         val pdfIntent = Intent(Intent.ACTION_GET_CONTENT)
                                         pdfIntent.type = "application/pdf"
                                         pdfIntent.addCategory(Intent.CATEGORY_OPENABLE)
                                         startActivityForGRNPDF.launch(
                                             Intent.createChooser(
-                                                pdfIntent,
-                                                "Select PDF file"
+                                                pdfIntent, "Select PDF file"
                                             )
                                         )
-                                    }
-                                    else {
+                                    } else {
                                         showSettingsDialog(this@InProcessDetailActivity)
-                                       // mToast(getString(R.string.please_enable_required_permission))
+                                        // mToast(getString(R.string.please_enable_required_permission))
                                     }
                                 }
 
@@ -244,25 +234,11 @@ class InProcessDetailActivity : BaseActivity() {
                             }
 
                             override fun onCameraClick(dialog: BottomSheetDialog) {
-                                if (verifyCameraPermission(this@InProcessDetailActivity)){
-                                    startActivityCamera2.launch(Intent(MediaStore.ACTION_IMAGE_CAPTURE))
-                                }
-                                else {
-                                    showSettingsDialog(this@InProcessDetailActivity)
-                                    //mToast(getString(R.string.please_enable_required_permission))
-                                }
-
-                              /*  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                                if (verifyCameraPermission(this@InProcessDetailActivity)) {
                                     startActivityCamera2.launch(Intent(MediaStore.ACTION_IMAGE_CAPTURE))
                                 } else {
-                                    if (verifyCameraPermission(this@InProcessDetailActivity)){
-                                        startActivityCamera2.launch(Intent(MediaStore.ACTION_IMAGE_CAPTURE))
-                                    }
-                                    else {
-                                        showSettingsDialog(this@InProcessDetailActivity)
-                                        //mToast(getString(R.string.please_enable_required_permission))
-                                    }
-                                }*/
+                                    showSettingsDialog(this@InProcessDetailActivity)
+                                }
                                 dialog.dismiss()
 
                             }
@@ -285,16 +261,23 @@ class InProcessDetailActivity : BaseActivity() {
                     return@setOnClickListener
                 }
 
-                mViewModel.hitDeliveredOrderByTransporterApi(
-                    userDetail.id,
-                    transporterOrderResponse.id,
-                    etWeightReceiptNoInProcessDetail.text.toString(),
-                    etGRNNoInProcessDetail.text.toString(),
-                    weightReceiptImage,
-                    grnImage
-                )
-                mViewModel.getDeliveredOrderByTransporterResponse()
-                    .observe(this@InProcessDetailActivity, deliveredOrderResponseObserver)
+
+                if (isConnectionAvailable()) {
+                    mViewModel.hitDeliveredOrderByTransporterApi(
+                        userDetail.id,
+                        transporterOrderResponse.id,
+                        etWeightReceiptNoInProcessDetail.text.toString(),
+                        etGRNNoInProcessDetail.text.toString(),
+                        weightReceiptImage,
+                        grnImage
+                    )
+                    mViewModel.getDeliveredOrderByTransporterResponse()
+                        .observe(this@InProcessDetailActivity, deliveredOrderResponseObserver)
+                } else {
+                    mToast(getString(R.string.no_internet_available))
+                }
+
+
             }
 
         }
@@ -348,9 +331,7 @@ class InProcessDetailActivity : BaseActivity() {
 
     private fun hitChangeOrderStatus(status: String) {
         mViewModel.hitChangeOrderStatusByTransporterApi(
-            mPref.getUserDetail().id,
-            transporterOrderResponse.id,
-            status
+            mPref.getUserDetail().id, transporterOrderResponse.id, status
         )
         mViewModel.getChangeOrderStatusByTransporterResponse()
             .observe(this@InProcessDetailActivity, changerOrderStatusObserver)
@@ -389,8 +370,7 @@ class InProcessDetailActivity : BaseActivity() {
                         visibility = View.VISIBLE
                         setImageURI(uri)
                     }
-                    grnImage =
-                        getRealPathFromURI(uri, this@InProcessDetailActivity).toString()
+                    grnImage = getRealPathFromURI(uri, this@InProcessDetailActivity).toString()
                 }
             } catch (e: Exception) {
                 mLog("Nothing Selected Image")
@@ -401,6 +381,10 @@ class InProcessDetailActivity : BaseActivity() {
 
     private fun setDetail(it: TransporterOrderResponse) {
         mBind.apply {
+
+            tvOrderDeliveryCharge.text = String.format(
+                "%s %s", getString(R.string.indian_rupee_symbol), it.estimated_delivery_rate
+            )
 
             tvBReqStatus.apply {
                 when (it.status) {
@@ -450,10 +434,9 @@ class InProcessDetailActivity : BaseActivity() {
 
             ivViewWReceiptInProcessDetail.apply {
 
-                if (checkIsImageExtensions(it.weight_receipt)){
+                if (checkIsImageExtensions(it.weight_receipt)) {
                     Glide.with(this@InProcessDetailActivity).load(it.weight_receipt).into(this)
-                }
-                else{
+                } else {
                     Glide.with(this@InProcessDetailActivity)
                         .load("https://blog.idrsolutions.com/app/uploads/2020/10/pdf-1.png")
                         .into(this)
@@ -465,35 +448,31 @@ class InProcessDetailActivity : BaseActivity() {
                         return@setOnClickListener
                     }
 
-                    if (checkIsImageExtensions(it.weight_receipt)){
-                        showImageDialog(
-                            this@InProcessDetailActivity,
+                    if (checkIsImageExtensions(it.weight_receipt)) {
+                        showImageDialog(this@InProcessDetailActivity,
                             it.weight_receipt,
                             object : CustomDialogs.OnShowImageDialogListener {
                                 override fun onClickDownload(dialog: Dialog, url: String) {
                                     downloadFileFromUrl(url)
-                                   // dialog.dismiss()
+                                    // dialog.dismiss()
                                 }
                             }).show()
-                    }else
-                    {
-                        showWebViewDialog(
-                            this@InProcessDetailActivity,
+                    } else {
+                        showWebViewDialog(this@InProcessDetailActivity,
                             it.weight_receipt,
                             object : CustomDialogs.OnShowImageDialogListener {
                                 override fun onClickDownload(dialog: Dialog, url: String) {
                                     downloadFileFromUrl(url)
-                                   // dialog.dismiss()
+                                    // dialog.dismiss()
                                 }
                             }).show()
                     }
                 }
             }
             ivViewEWayBillInProcessDetail.apply {
-                if (checkIsImageExtensions(it.eway_bill)){
+                if (checkIsImageExtensions(it.eway_bill)) {
                     Glide.with(this@InProcessDetailActivity).load(it.eway_bill).into(this)
-                }
-                else{
+                } else {
                     Glide.with(this@InProcessDetailActivity)
                         .load("https://blog.idrsolutions.com/app/uploads/2020/10/pdf-1.png")
                         .into(this)
@@ -504,9 +483,8 @@ class InProcessDetailActivity : BaseActivity() {
                         return@setOnClickListener
                     }
 
-                    if (checkIsImageExtensions(it.eway_bill)){
-                        showImageDialog(
-                            this@InProcessDetailActivity,
+                    if (checkIsImageExtensions(it.eway_bill)) {
+                        showImageDialog(this@InProcessDetailActivity,
                             it.eway_bill,
                             object : CustomDialogs.OnShowImageDialogListener {
                                 override fun onClickDownload(dialog: Dialog, url: String) {
@@ -514,10 +492,8 @@ class InProcessDetailActivity : BaseActivity() {
                                     dialog.dismiss()
                                 }
                             }).show()
-                    }else
-                    {
-                        showWebViewDialog(
-                            this@InProcessDetailActivity,
+                    } else {
+                        showWebViewDialog(this@InProcessDetailActivity,
                             it.eway_bill,
                             object : CustomDialogs.OnShowImageDialogListener {
                                 override fun onClickDownload(dialog: Dialog, url: String) {
@@ -526,7 +502,6 @@ class InProcessDetailActivity : BaseActivity() {
                                 }
                             }).show()
                     }
-
 
 
                     //startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(it.eway_bill)))
@@ -541,9 +516,10 @@ class InProcessDetailActivity : BaseActivity() {
             tvDropLocationInProcessDetail.text = it.address
             tvItemPickupAssignedDate.text =
                 String.format("%s %s", "Assigned Date :", it.assigned_date)
-            tvDeliveryDate.text = if (it.delivery_date.isNullOrEmpty()) it.estimated_delivery_date else it.delivery_date
+            tvDeliveryDate.text =
+                if (it.delivery_date.isNullOrEmpty()) it.estimated_delivery_date else it.delivery_date
 
-           // tvDeliveryDate.text = it.delivery_date
+            // tvDeliveryDate.text = it.delivery_date
             tvPickupDate.text = it.pickup_date
             tvStatusAcceptedInProcessDetail.text =
                 String.format("%s, %s", getString(R.string.reached), it.reached_date)
@@ -585,32 +561,28 @@ class InProcessDetailActivity : BaseActivity() {
 
             tvGoods1.text = it.one_requested_product
             tvPQ1.text = it.one_purchased_quantity
-            tvUnit1.text = it.one_unit_of_quantity
-            /* tvRate1.text = it.one_unit_rate
+            tvUnit1.text = it.one_unit_of_quantity/* tvRate1.text = it.one_unit_rate
              tvGst1.text = it.one_product_gst
              tvTAmount1.text = it.one_total_unit_price_excl_gst
              tvGstAmount1.text = it.one_total_unit_price_incl_gst*/
 
             tvGoods2.text = it.two_requested_product
             tvPQ2.text = it.two_purchased_quantity
-            tvUnit2.text = it.two_unit_of_quantity
-            /*  tvRate2.text = it.two_unit_rate
+            tvUnit2.text = it.two_unit_of_quantity/*  tvRate2.text = it.two_unit_rate
               tvGst2.text = it.two_product_gst
               tvTAmount2.text = it.two_total_unit_price_excl_gst
               tvGstAmount2.text = it.two_total_unit_price_incl_gst*/
 
             tvGoods3.text = it.three_requested_product
             tvPQ3.text = it.three_purchased_quantity
-            tvUnit3.text = it.three_unit_of_quantity
-            /* tvRate3.text = it.three_unit_rate
+            tvUnit3.text = it.three_unit_of_quantity/* tvRate3.text = it.three_unit_rate
              tvGst3.text = it.three_product_gst
              tvTAmount3.text = it.three_total_unit_price_excl_gst
              tvGstAmount3.text = it.three_total_unit_price_incl_gst
  */
             tvGoods4.text = it.four_requested_product
             tvPQ4.text = it.four_purchased_quantity
-            tvUnit4.text = it.four_unit_of_quantity
-            /* tvRate4.text = it.four_unit_rate
+            tvUnit4.text = it.four_unit_of_quantity/* tvRate4.text = it.four_unit_rate
              tvGst4.text = it.four_product_gst
              tvTAmount4.text = it.four_total_unit_price_excl_gst
              tvGstAmount4.text = it.four_total_unit_price_incl_gst
@@ -691,9 +663,7 @@ class InProcessDetailActivity : BaseActivity() {
             try {
                 if (result.resultCode == Activity.RESULT_OK) {
                     val imageUri: Uri = result.data?.data!!
-                    val path =
-                        getRealPathFromURI(imageUri, this@InProcessDetailActivity)
-                    /*val bytes = getBytes(imageUri, this)
+                    val path = getRealPathFromURI(imageUri, this@InProcessDetailActivity)/*val bytes = getBytes(imageUri, this)
                     val pdfSizeInKb = bytes!!.size / 1024.toDouble()
                     val pdfSizeInMB = pdfSizeInKb / 1024*/
 
@@ -724,8 +694,7 @@ class InProcessDetailActivity : BaseActivity() {
                     val pdfSizeInKb = bytes!!.size / 1024.toDouble()
                     val pdfSizeInMB = pdfSizeInKb / 1024
                     if (pdfSizeInMB < 2.toDouble()) {
-                        grnImage =
-                            getRealPathFromURI(imageUri, this@InProcessDetailActivity)
+                        grnImage = getRealPathFromURI(imageUri, this@InProcessDetailActivity)
                         mLog("pdf path : $weightReceiptImage")
                         Glide.with(this@InProcessDetailActivity)
                             .load("https://blog.idrsolutions.com/app/uploads/2020/10/pdf-1.png")
@@ -743,15 +712,15 @@ class InProcessDetailActivity : BaseActivity() {
         }
 
 
-   /* fun checkIsImageExtensions(url: String): Boolean {
-        return if (url.contains(".png") || url.contains(".jpg") || url.contains(
-                ".jpeg"
-            )
-        ){
-            true
-        }else{
-            false
-        }
-    }*/
+    /* fun checkIsImageExtensions(url: String): Boolean {
+         return if (url.contains(".png") || url.contains(".jpg") || url.contains(
+                 ".jpeg"
+             )
+         ){
+             true
+         }else{
+             false
+         }
+     }*/
 
 }

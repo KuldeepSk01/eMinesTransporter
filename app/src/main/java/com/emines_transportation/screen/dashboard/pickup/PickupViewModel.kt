@@ -30,6 +30,9 @@ class PickupViewModel(private val repo: PickupRepo) : BaseViewModel() {
     private val deliveredOrderResponse =
         MutableLiveData<ApiResponse<SuccessMsgResponse>>()
 
+    private val uploadDeliveredBillResponse =
+        MutableLiveData<ApiResponse<SuccessMsgResponse>>()
+
 
     fun hitPickedUpOrderListApi(transporterId: Int, status: String) {
         repo.executeTransporterOrderApi(transporterId, status, transporterPickedUpOrderResponse)
@@ -243,5 +246,28 @@ class PickupViewModel(private val repo: PickupRepo) : BaseViewModel() {
             return list
         }
     */
+
+
+
+
+
+
+
+    fun hitUploadDeliveredBillApi(
+        transporterId: Int,
+        orderId: Int,
+        deliveryBillReceipt: String?,
+    ) {
+        repo.uploadDeliveredBill(
+            transporterId,
+            orderId,
+            deliveryBillReceipt,
+            uploadDeliveredBillResponse
+        )
+    }
+
+    fun getUploadDeliveredBillResponse(): MutableLiveData<ApiResponse<SuccessMsgResponse>> {
+        return uploadDeliveredBillResponse
+    }
 
 }

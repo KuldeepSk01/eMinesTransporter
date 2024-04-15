@@ -1042,11 +1042,39 @@
                 </androidx.cardview.widget.CardView>
 
 
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llcItemPickupBReq8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_below="@+id/cvBReq"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="Delivery charges "
+                        android:textColor="@color/primary_color" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvOrderDeliveryCharge"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_50sdp"
+                        android:fontFamily="@font/inter_medium"
+                        android:textColor="@color/black" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cvInProcessDetail1InProcessDetail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/cvBReq"
+                    android:layout_below="@+id/llcItemPickupBReq8"
                     android:layout_margin="@dimen/_10sdp"
                     app:cardCornerRadius="@dimen/_10sdp"
                     app:cardElevation="@dimen/_5sdp"
@@ -1363,7 +1391,9 @@
                     android:layout_below="@+id/rlBottomBtn"
                     android:layout_marginBottom="@dimen/_50sdp"
                     android:padding="@dimen/_10sdp"
-                    android:visibility="gone">
+                    android:visibility="gone"
+
+                    >
 
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:id="@+id/llcStatusAcceptedInProcessDetail"
