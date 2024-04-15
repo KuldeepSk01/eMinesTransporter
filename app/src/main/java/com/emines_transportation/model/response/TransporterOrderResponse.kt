@@ -87,9 +87,10 @@ data class TransporterOrderResponse(
     val reached_date: String,
     val delivery_date: String,
     val estimated_delivery_date: String,
+    val total_delivery_weight: String,
+    val estimated_delivery_rate: String,
+
     val total_orders_againest_po: Int,
-
-
 
     val pickup_weight: String,
     val weight_receipt: String,
@@ -102,5 +103,6 @@ data class TransporterOrderResponse(
 
     val grn_number: String,
     val grn_file: String,
+    val delivery_bill_file: String,
 
 ):Serializable

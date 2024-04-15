@@ -92,4 +92,16 @@ interface ApiService {
     fun transporterDashboard(@Field("transporter_id") transporterId:Int): Call<BaseResponse1<TransportDashboardResponse>>
 
 
+
+
+    @Multipart
+    @POST(Constants.UrlsEndPoint.uploadDeliveryBill)
+    fun uploadDeliveredBillTransporter(
+        @Part("transporter_id") transporterId: RequestBody,
+        @Part("order_id") orderId: RequestBody,
+        @Part uploadDeliveryBillFile:MultipartBody.Part?,
+    ): Call<SuccessMsgResponse>
+
+
+
 }

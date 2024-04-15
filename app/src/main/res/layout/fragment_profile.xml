@@ -61,8 +61,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0"
                         app:layout_constraintStart_toEndOf="@+id/cvProfileImg"
-                        app:layout_constraintTop_toTopOf="@+id/cvProfileImg"
-                        >
+                        app:layout_constraintTop_toTopOf="@+id/cvProfileImg">
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/tvProfileName"
@@ -81,28 +80,28 @@
                             android:text="@string/_8837635262"
                             android:textColor="@color/white" />
 
-                      <!--  <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/tvProfileEmail"
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvProfileCompanyName"
                             style="@style/defaultTextStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/tvProfileMobile"
-                            android:text="@string/gajendra_connect_gmail_com_text"
                             android:textColor="@color/white" />
--->
                     </RelativeLayout>
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/ivEditProfileBtn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginTop="@dimen/_15sdp"
-                        android:layout_marginEnd="@dimen/_20sdp"
-                        android:padding="@dimen/_10sdp"
-                        android:src="@drawable/ic_edit"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/cvProfileImg" />
+                    <!--
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:id="@+id/ivEditProfileBtn"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_marginTop="@dimen/_15sdp"
+                                            android:layout_marginEnd="@dimen/_20sdp"
+                                            android:padding="@dimen/_10sdp"
+                                            android:src="@drawable/ic_edit"
+                                            app:layout_constraintEnd_toEndOf="parent"
+                                            app:layout_constraintTop_toTopOf="@id/cvProfileImg" />
+                    -->
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -116,42 +115,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/clHeaderProfile">
 
-                  <!--  <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/tvProfile"
-                        style="@style/profileTextViewStyle"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:text="@string/profile"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
--->
-          <!--          <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/tvAddressProfile"
-                        style="@style/profileTextViewStyle"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:text="@string/address"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvProfile" />
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/tvKYCProfile"
-                        style="@style/profileTextViewStyle"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:text="@string/kyc"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvAddressProfile" />
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/tvBankDetailProfile"
-                        style="@style/profileTextViewStyle"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:text="@string/bank_detail_text"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvKYCProfile" />
--->
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tvProfile"
                         style="@style/profileTextViewStyle"
@@ -160,30 +124,82 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/tvSupportProfile"
-                        style="@style/profileTextViewStyle"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:text="@string/support"
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvProfile"
-                        />
+                        app:layout_constraintTop_toBottomOf="@+id/tvProfile">
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvPanNoPI"
+                            style="@style/defaultTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:text="@string/company_pan_number"
+                            android:textSize="@dimen/_10ssp"
+                            app:fontFamily="@font/inter_semi_bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/etPanNoPI"
+                            style="@style/profileTextViewStyle"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:drawableEnd="@drawable/ic_doc_file"
+                            android:hint="@string/company_pan_number"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintTop_toBottomOf="@+id/tvPanNoPI" />
+
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvGSTNoPI"
+                            style="@style/defaultTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:inputType="number"
+                            android:text="@string/company_gst_number"
+                            android:textSize="@dimen/_10ssp"
+                            app:fontFamily="@font/inter_semi_bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/etPanNoPI" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/etGSTNoPI"
+                            style="@style/profileTextViewStyle"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:drawableEnd="@drawable/ic_doc_file"
+                            android:hint="@string/company_gst_number"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:textSize="@dimen/_10ssp"
+                            app:layout_constraintTop_toBottomOf="@+id/tvGSTNoPI" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tvLogoutProfile"
                         style="@style/profileTextViewStyle"
-                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/_50sdp"
                         android:text="@string/log_out"
-                        app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        />
+                        app:layout_constraintTop_toBottomOf="@+id/clProfile" />
 
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_50sdp"
+                        android:layout_height="@dimen/_100sdp"
                         android:layout_marginBottom="@dimen/_100sdp"
                         app:layout_constraintTop_toBottomOf="@+id/tvLogoutProfile" />
 

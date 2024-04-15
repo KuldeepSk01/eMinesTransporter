@@ -3,7 +3,11 @@ package com.emines_transportation.screen.dashboard
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.widget.Toast
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
@@ -14,15 +18,19 @@ import com.emines_transportation.base.BaseResponse
 import com.emines_transportation.databinding.ActivityMainBinding
 import com.emines_transportation.model.response.TransporterResponse
 import com.emines_transportation.network.ApiResponse
-import com.emines_transportation.screen.dashboard.pickup.PickupFragment
-import com.emines_transportation.screen.dashboard.home.HomeFragment
 import com.emines_transportation.screen.dashboard.delivered.DeliveredFragment
-import com.emines_transportation.screen.dashboard.profile.ProfileFragment
+import com.emines_transportation.screen.dashboard.home.HomeFragment
 import com.emines_transportation.screen.dashboard.inprocess.InProcessFragment
+import com.emines_transportation.screen.dashboard.pickup.PickupFragment
+import com.emines_transportation.screen.dashboard.profile.ProfileFragment
 import com.emines_transportation.util.mLog
 import com.emines_transportation.util.mToast
 import com.emines_transportation.util.requestStoragePermission
 import com.emines_transportation.util.requestStoragePermissionAbove32
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory
+import com.google.android.play.core.appupdate.AppUpdateOptions
+import com.google.android.play.core.install.model.AppUpdateType
+import com.google.android.play.core.install.model.UpdateAvailability
 
 class MainActivity : BaseActivity(), ActivityMainListener {
     private var isBackPressAgain = false
@@ -67,6 +75,8 @@ class MainActivity : BaseActivity(), ActivityMainListener {
         mainListener = this@MainActivity
         mainListener.onReplaceFragment(homeFragment)
         onSelectBtn(HOME_FRAGMENT)
+
+        checkForUpdate()
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             requestStoragePermissionAbove32(this@MainActivity)
@@ -225,6 +235,51 @@ class MainActivity : BaseActivity(), ActivityMainListener {
 
         }
     }
+
+
+    private fun checkForUpdate() {
+        val appUpdateManager = AppUpdateManagerFactory.create(this@MainActivity)
+        // Returns an intent object that you use to check for an update.
+        val appUpdateInfoTask = appUpdateManager.appUpdateInfo
+        // Checks that the platform will allow the specified type of update.
+        appUpdateInfoTask.addOnSuccessListener { appUpdateInfo ->
+            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
+                // This example applies an immediate update. To apply a flexible update
+                // instead, pass in AppUpdateType.FLEXIBLE
+                && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)
+            ) {
+                // Request the update.
+                appUpdateManager.startUpdateFlowForResult(
+                    // Pass the intent that is returned by 'getAppUpdateInfo()'.
+                    appUpdateInfo,
+                    // an activity result launcher registered via registerForActivityResult
+                    activityResultLauncher,
+                    // Or pass 'AppUpdateType.FLEXIBLE' to newBuilder() for
+                    // flexible updates.
+                    AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build()
+                )
+            }
+        }
+    }
+
+    private val activityResultLauncher =
+        registerForActivityResult(ActivityResultContracts.StartIntentSenderForResult()) { result: ActivityResult ->
+            // handle callback
+            if (result.resultCode != AppCompatActivity.RESULT_OK) {
+                Log.d(
+                    "App Update",
+                    "Update flow failed! Result code: " + result.resultCode
+                );
+                // If the update is canceled or fails,
+                // you can request to start the update again.
+            } else {
+                Log.d(
+                    "App Update",
+                    "App Update is available "
+                );
+            }
+
+        }
 
 
 }

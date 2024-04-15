@@ -46,16 +46,15 @@
                 android:id="@+id/tvItemPickupAssignedDate"
                 style="@style/defaultTextStyle"
                 android:layout_width="0dp"
-                android:layout_marginEnd="@dimen/_10sdp"
-                app:layout_constraintEnd_toStartOf="@+id/tvItemPoNo"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
                 android:fontFamily="@font/inter_medium"
-                android:textColor="@color/black"
                 android:text="@string/assigned_date"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/tvItemPoNo"
 
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvItemPickupBReqIdText" />
-
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -64,11 +63,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/default_btn_drawable"
-                android:textColor="@color/white"
+                android:fontFamily="@font/inter_medium"
                 android:padding="@dimen/_5sdp"
 
-                android:fontFamily="@font/inter_medium"
                 android:text="PO No: xyz|11|PQ12"
+                android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -346,6 +345,36 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvOrderStatus"
+                    style="@style/defaultTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_50sdp"
+                    android:fontFamily="@font/inter_medium"
+                    android:textColor="@color/black" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llcItemPickupBReq8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/ivItemAddressPickupImg"
+                app:layout_constraintTop_toBottomOf="@+id/llcItemPickupBReq7">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/defaultTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="Delivery charges "
+                    android:textColor="@color/primary_color" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvOrderDeliveryCharge"
                     style="@style/defaultTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

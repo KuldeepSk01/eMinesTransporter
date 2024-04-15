@@ -161,6 +161,60 @@
                         app:layout_constraintTop_toBottomOf="@+id/tvPhoneNumberPI" />
 
 
+
+
+
+
+
+              <!--      <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvPanNoPI"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:inputType="number"
+                        android:text="@string/pan_number"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etPhoneNumberPI" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/etPanNoPI"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/pan_number"
+                        android:drawableEnd="@drawable/ic_doc_file"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPanNoPI" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvGRNNoPI"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:inputType="number"
+                        android:text="@string/grn_no"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/etPanNoPI" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/etGRNNoPI"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:hint="@string/grn_no"
+                        android:drawableEnd="@drawable/ic_doc_file"
+                        app:layout_constraintTop_toBottomOf="@+id/tvGRNNoPI" />
+
+-->
+
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_100sdp"

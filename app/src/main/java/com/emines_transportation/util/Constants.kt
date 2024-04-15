@@ -19,8 +19,10 @@ object Constants {
             const val pickedUpByTransporter = "pickedUpByTransporter"
             const val deliverByTransporter = "deliverByTransporter"
 
-            const val editProfile = "demo"
+            const val editProfile = "edit_profile"
             const val transporter_dashboard = "transporter_dashboard"
+
+            const val uploadDeliveryBill = "uploadDeliveryBill"
 
         }
     }
@@ -48,6 +50,12 @@ object Constants {
             const val TOKEN = "TOKEN"
             const val AUTHORIZATION = "authorization"
             const val USER_DETAIL = "USER_DETAIL"
+
+            const val C_NAME = "C_NAME"
+            const val C_PAN = "C_PAN"
+            const val C_PAN_FILE = "C_PAN_FILE"
+            const val C_GST = "C_GST"
+            const val C_GST_FILE = "C_GST_FILE"
         }
     }
 

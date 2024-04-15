@@ -93,9 +93,9 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/inter_medium"
-                                app:layout_constraintEnd_toStartOf="@+id/tvBReqStatus"
                                 android:text="@string/assigned_date"
                                 android:textColor="@color/black"
+                                app:layout_constraintEnd_toStartOf="@+id/tvBReqStatus"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/tvPONoTextDeliveredDetail" />
 
@@ -104,11 +104,11 @@
                                 android:id="@+id/tvBReqStatus"
                                 style="@style/defaultTextStyle"
                                 android:layout_width="0dp"
-                                android:gravity="end"
                                 android:layout_height="wrap_content"
-                                android:layout_marginEnd="@dimen/_10sdp"
                                 android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginEnd="@dimen/_10sdp"
                                 android:fontFamily="@font/inter_medium"
+                                android:gravity="end"
                                 android:textColor="@color/order_complete_color"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="1"
@@ -1038,12 +1038,38 @@
 
                     </androidx.cardview.widget.CardView>
 
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/llcItemPickupBReq8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/cvBReq"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_20sdp">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/defaultTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/inter_medium"
+                            android:text="Delivery charges "
+                            android:textColor="@color/primary_color" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvOrderDeliveryCharge"
+                            style="@style/defaultTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_50sdp"
+                            android:fontFamily="@font/inter_medium"
+                            android:textColor="@color/black" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/cvDeliveredDetail1DeliveredDetail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/cvBReq"
+                        android:layout_below="@+id/llcItemPickupBReq8"
                         android:layout_margin="@dimen/_10sdp"
                         app:cardCornerRadius="@dimen/_10sdp"
                         app:cardElevation="@dimen/_5sdp"
@@ -1237,8 +1263,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/cvDeliveredDetail1DeliveredDetail"
-                            android:layout_marginStart="@dimen/_5sdp
-"
+                            android:layout_marginStart="@dimen/_5sdp"
                             android:text="12"
                             android:textColor="@color/blue_color_1"
                             android:textSize="@dimen/_10ssp"
@@ -1457,6 +1482,58 @@
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_150sdp"
                         android:layout_below="@+id/llcGrn"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:shapeAppearance="@style/shapeableImageStyle" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/saperate4"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_below="@+id/ivViewGRNDeliveredDetail"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:background="@color/box_color_2" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvUploadBillReceipt"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/saperate4"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:drawableEnd="@drawable/ic_upload"
+                        android:text="Upload Bill Reciept"
+
+                        android:textColor="@color/default_text_color"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvViewDeliveredBill"
+                        style="@style/defaultTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvUploadBillReceipt"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:text="View Delivered Bill"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontFamily="@font/inter_semi_bold" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivViewUploadedDeliveredBillDetail"
+                        style="@style/editTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_150sdp"
+                        android:layout_below="@+id/tvViewDeliveredBill"
                         android:textSize="@dimen/_10ssp"
                         app:fontFamily="@font/inter_semi_bold"
                         app:layout_constraintStart_toStartOf="parent"

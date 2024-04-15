@@ -18,6 +18,7 @@ import com.emines_transportation.network.ApiResponse
 import com.emines_transportation.screen.dashboard.delivered.detail.DeliveredDetailActivity
 import com.emines_transportation.screen.dashboard.pickup.PickupViewModel
 import com.emines_transportation.util.Constants
+import com.emines_transportation.util.isConnectionAvailable
 import com.emines_transportation.util.mToast
 import org.koin.core.component.inject
 
@@ -26,7 +27,7 @@ class DeliveredFragment : BaseFragment(), OnClickPickupListener {
     private lateinit var mBind: FragmentOrdersBinding
     private val mViewModel: PickupViewModel by inject()
     private var transporterOrdersList = mutableListOf<TransporterOrderResponse>()
-    private var mContext: Context?=null
+    private lateinit var mContext: Context
 
     override fun getLayoutId() = R.layout.fragment_orders
     override fun onCreateViewInit(binding: ViewDataBinding, view: View) {
@@ -71,17 +72,16 @@ class DeliveredFragment : BaseFragment(), OnClickPickupListener {
             }
 
             rvOrder.apply {
-                layoutManager =
-                    LinearLayoutManager(
-                        mContext!!.applicationContext,
-                        LinearLayoutManager.VERTICAL,
-                        false
-                    )
-                adapter =
-                    PickupListAdapter(pickupList, mContext!!.applicationContext, this@DeliveredFragment)
+                layoutManager = LinearLayoutManager(
+                    mContext.applicationContext, LinearLayoutManager.VERTICAL, false
+                )
+                adapter = PickupListAdapter(
+                    pickupList,
+                    mContext.applicationContext,
+                    this@DeliveredFragment
+                )
             }
         }
-
 
 
     }
@@ -114,7 +114,12 @@ class DeliveredFragment : BaseFragment(), OnClickPickupListener {
 
     override fun onResume() {
         super.onResume()
-        hitOrderApi(getString(R.string.delivered))
+        if (isConnectionAvailable()){
+            hitOrderApi(getString(R.string.delivered))
+        }else{
+            mToast(getString(R.string.no_internet_available))
+        }
+
 
     }
 }

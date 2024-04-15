@@ -18,6 +18,7 @@ import com.emines_transportation.network.ApiResponse
 import com.emines_transportation.screen.dashboard.pickup.detail.PickUpDetailActivity
 
 import com.emines_transportation.util.Constants
+import com.emines_transportation.util.isConnectionAvailable
 import com.emines_transportation.util.mToast
 import org.koin.core.component.inject
 
@@ -25,7 +26,7 @@ class PickupFragment : BaseFragment(), OnClickPickupListener {
 
     private lateinit var mBind: FragmentBuyerBinding
     private val mViewModel: PickupViewModel by inject()
-    private var mContext: Context? = null
+    private lateinit var mContext: Context
     private var transporterOrdersList = mutableListOf<TransporterOrderResponse>()
 
     override fun getLayoutId() = R.layout.fragment_buyer
@@ -70,12 +71,10 @@ class PickupFragment : BaseFragment(), OnClickPickupListener {
             }
             rvBuyer.apply {
                 layoutManager = LinearLayoutManager(
-                    mContext!!.applicationContext, LinearLayoutManager.VERTICAL, false
+                    mContext.applicationContext, LinearLayoutManager.VERTICAL, false
                 )
                 adapter = PickupListAdapter(
-                    pickupList,
-                    mContext!!.applicationContext,
-                    this@PickupFragment
+                    pickupList, mContext.applicationContext, this@PickupFragment
                 )
             }
         }
@@ -118,6 +117,11 @@ class PickupFragment : BaseFragment(), OnClickPickupListener {
 
     override fun onResume() {
         super.onResume()
-        hitOrderApi(getString(R.string.pick_up))
+        if (isConnectionAvailable()) {
+            hitOrderApi(getString(R.string.pick_up))
+        } else {
+            mToast(getString(R.string.no_internet_available))
+        }
+
     }
 }

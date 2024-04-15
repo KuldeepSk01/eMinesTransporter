@@ -108,7 +108,6 @@ class OTPVerificationActivity : BaseActivity() {
                     showProgress()
 
                 }
-
                 ApiResponse.Status.SUCCESS -> {
                     hideProgress()
                     setOtpTimer()

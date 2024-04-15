@@ -1,5 +1,6 @@
 package com.emines_transportation.screen.dashboard.home
 
+import android.content.Context
 import android.view.View
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
@@ -14,6 +15,7 @@ import com.emines_transportation.screen.dashboard.delivered.DeliveredFragment
 import com.emines_transportation.screen.dashboard.inprocess.InProcessFragment
 import com.emines_transportation.screen.dashboard.pickup.PickupFragment
 import com.emines_transportation.util.Constants
+import com.emines_transportation.util.isConnectionAvailable
 import com.emines_transportation.util.mToast
 import org.koin.core.component.inject
 
@@ -24,7 +26,12 @@ class HomeFragment : BaseFragment() {
     private val homeVM: HomeViewModel by inject()
     private val userDetail = mPref.getUserDetail()
 
+    private lateinit var mContext : Context
+
+
     override fun getLayoutId() = R.layout.fragment_home
+
+
     override fun onCreateViewInit(binding: ViewDataBinding, view: View) {
         homeBinding = binding as FragmentHomeBinding
         // mViewModel.mFragment = this@HomeFragment
@@ -45,14 +52,24 @@ class HomeFragment : BaseFragment() {
               //  replaceFragment(R.id.flMainContainer,DeliveredFragment())
             }
 
+            if (isConnectionAvailable()){
+                homeVM.hitTransporterDashboard(mPref.getUserDetail().id)
+                homeVM.getTransporterDashboard()
+                    .observe(requireActivity(), transporterDashboardResponseObserver)
 
-            homeVM.hitTransporterDashboard(mPref.getUserDetail().id)
-            homeVM.getTransporterDashboard()
-                .observe(requireActivity(), transporterDashboardResponseObserver)
+            }else{
+                mToast(getString(R.string.no_internet_available))
+            }
 
-            userDetail?.let {
+
+
+
+
+
+
+        userDetail?.let {
                 tvProfileHomeUserName.text = it.name
-                if (it.profile_pic.isEmpty()){
+                if (it.profile_pic.isNullOrEmpty()){
                     Glide.with(requireActivity()).load(Constants.DefaultConstant.TRANSPORTER_IMAGE).into(ivProfileHomeImg)
                 }else{
                     Glide.with(requireActivity()).load(it.profile_pic).into(ivProfileHomeImg)
@@ -74,15 +91,30 @@ class HomeFragment : BaseFragment() {
                 ApiResponse.Status.SUCCESS -> {
                     hideProgress()
                     homeBinding.apply {
-                        val transporter = it.data?.data?.driver
-                       // mPref.setUserDetail(transporter)
+                        val driver = it.data?.data?.driver!!
+
+                        if (driver.profile_pic.isEmpty()){
+                            Glide.with(requireActivity()).load(Constants.DefaultConstant.TRANSPORTER_IMAGE).into(ivProfileHomeImg)
+                        }else{
+                            Glide.with(requireActivity()).load(driver.profile_pic).into(ivProfileHomeImg)
+                        }
+
+                        mPref.setUserDetail(driver)
 
                         it.data?.data?.let {
-                            tvProfileHomeCompanyName.text = it.company
+                            tvProfileHomeCompanyName.text = it.companyName
                             tvPickUpCount.text = it.pickupOrders.toString()
                             tvInProcessCount.text = it.inprocessOrders.toString()
                             tvDeliveredOrderCount.text = it.deliveredOrders.toString()
-                            tvCompanyNameHome.text = it.company
+                            tvCompanyNameHome.text = it.companyName
+
+
+                            mPref.put(Constants.PreferenceConstant.C_NAME,it.companyName)
+                            mPref.put(Constants.PreferenceConstant.C_PAN,it.companyPanNo)
+                            mPref.put(Constants.PreferenceConstant.C_PAN_FILE,it.companyPanFile)
+                            mPref.put(Constants.PreferenceConstant.C_GST,it.companyGstNo)
+                            mPref.put(Constants.PreferenceConstant.C_GST_FILE,it.companyGstFile)
+
                         }
 
 

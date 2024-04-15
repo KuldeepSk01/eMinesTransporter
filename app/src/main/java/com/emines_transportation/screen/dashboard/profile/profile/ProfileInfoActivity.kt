@@ -42,11 +42,18 @@ class ProfileInfoActivity : BaseActivity() {
                 }
             }
 
+
+
+
+
+
+
             userDetail?.let {
                 etFNamePI.text = it.name
                 etPhoneNumberPI.text = it.phone
                 etTruckNumber.setText(it.truck_number)
-                if (it.profile_pic.isEmpty()){
+
+                if (it.profile_pic.isNullOrEmpty()){
                     Glide.with(this@ProfileInfoActivity).load(Constants.DefaultConstant.TRANSPORTER_IMAGE).into(ivPI)
                 }else{
                     Glide.with(this@ProfileInfoActivity).load(it.profile_pic).into(ivPI)
